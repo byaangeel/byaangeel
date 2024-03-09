@@ -91,7 +91,7 @@
         }
         .product-info .colors button {
             margin-right: 10px;
-            background-color: #007bff;
+            background-color: #7e8337;
             color: #fff;
             border: none;
             padding: 5px 10px;
@@ -129,7 +129,7 @@
 <body>
     <header class="main-header">
         <h1>Mi Tienda de Joyería</h1>
-        <img src="tu_logo.png" alt="Logo de la tienda">
+        <img src="tu_logo.png"  alt="Logo de la tienda">
     </header>
 
     <header class="secondary-header">
@@ -138,7 +138,7 @@
 
     <section class="news-section">
         <h2>Últimas noticias</h2>
-        <img src="noticias.jpg" alt="Noticias">
+        <img src="nuevanoticia.png" height="350px" alt="Noticias">
     </section>
 
     <nav id="menu">
@@ -152,9 +152,9 @@
 
     <section>
         <div class="search-section">
-            <button onclick="showProducts('cadenas')">Cadenas</button>
-            <button onclick="showProducts('anillos')">Anillos</button>
             <button onclick="showProducts('gargantillas')">Gargantillas</button>
+            <button onclick="showProducts('anillos')">Anillos</button>
+            <button onclick="showProducts('cadenas')">Cadenas</button>
             <button onclick="showProducts('joyeros')">Joyeros</button>
             <button onclick="showProducts('conjuntos')">Conjuntos</button>
             <!-- Agrega más botones según sea necesario -->
@@ -174,23 +174,138 @@
             // Aquí deberías cargar los productos desde una base de datos o archivo JSON, pero por simplicidad,
             // mostraré algunos productos de ejemplo.
             var productosHTML = '';
-            if (category === 'cadenas') {
+            if (category === 'gargantillas') {
                 productosHTML += `
-                    <h2 style="color: #333;">Cadenas</h2>
+                    <h2 style="color: #333;">Gargantillas</h2>
                     <div class="product">
                         <img src="1.png" alt="Cadena 1">
                         <div class="product-info">
-                            <p style="color: #333;">Precio: $50</p>
+                            <p style="color: #333;">Precio: $129</p>
+                            
+                            
                             <!-- Botones, información adicional, etc. -->
                         </div>
                     </div>
                     <div class="product">
-                        <img src="cadena2.jpg" alt="Cadena 2">
+                        <img src="2.png" alt="Cadena 2">
                         <div class="product-info">
-                            <p style="color: #333;">Precio: $60</p>
+                            <p style="color: #333;">Precio: $129</p>
                             <!-- Botones, información adicional, etc. -->
                         </div>
                     </div>
+                    <div class="product">
+                        <img src="3.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $139</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="4.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $149</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="5.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $149</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="6.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $169</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="7.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $139</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="8.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $79</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="9.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $79</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="10.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $149</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="11.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $259</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="12.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $219</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="13.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $289</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="14.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $179</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="15.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $179</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="16.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $159</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="17.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $159</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="18.png" alt="Cadena 2">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $159</p>
+                            <!-- Botones, información adicional, etc. -->
+                        </div>
+                    </div>
+                    
                     <!-- Agrega más productos de cadenas según sea necesario -->
                 `;
             } else if (category === 'anillos') {
@@ -227,9 +342,9 @@
                     </div>
                     <!-- Agrega más productos de anillos según sea necesario -->
                 `;
-            } else if (category === 'gargantillas') {
+            } else if (category === 'cadenas') {
                 productosHTML += `
-                    <h2 style="color: #333;">Gargantillas</h2>
+                    <h2 style="color: #333;">cadenas</h2>
                     <div class="product">
                         <img src="gargantilla1.jpg" alt="Gargantilla 1">
                         <div class="product-info">

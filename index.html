@@ -20,11 +20,11 @@
             font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
         }
         .secondary-header {
-            background-color: #000000;
+            background-color: #eeb8e9f8;
             color: #fff;
             padding: .3px; /* Ajuste de padding */
             text-align: center;
-            font-size: 14px; /* Ajuste de tamaño de fuente */
+            font-size: 15px; /* Ajuste de tamaño de fuente */
             
         }
         nav {
@@ -44,19 +44,24 @@
             margin: 0;
         }
         nav ul li {
-            display: block;
-            margin-bottom: 10px;
+            display: inline-block; /* Cambio para que los elementos se muestren en línea */
+            margin-right: 10px; /* Espacio entre los elementos */
         }
         nav ul li a {
             color: #333;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
-            display: block;
+            display: flex;
+            align-items: center; /* Centra verticalmente el texto e icono */
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #ddd;
             
+        }
+        nav ul li a img {
+            max-width: 20px; /* Tamaño máximo de la imagen */
+            margin-right: 5px; /* Espacio entre la imagen y el texto */
         }
         nav ul li a:hover {
             background-color: #ccc;
@@ -101,7 +106,7 @@
             position: absolute;
             top: -20px; /* Posición del texto encima del precio */
             left: 10px; /* Ajusta esta línea para el espaciado izquierdo */
-            background-color: #adab1b;
+            background-color: #eeb8e9f8;
             color: #fff;
             padding: 5px 10px;
             border-radius: 15px;
@@ -115,16 +120,16 @@
             margin-top: 10px;
         }
         .product-info button {
-            background-color: #adab1b;
+            background-color: #b88eb3f8;
             color: #fff;
             border: none;
             padding: 10px 15px;
             border-radius: 15px;
             cursor: pointer;
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+           
         }
         .product-info button:hover {
-            background-color: #a3943c;
+            background-color: #eeb8e9f8;
         }
         .search-section {
             text-align: center;
@@ -133,16 +138,16 @@
         }
         .search-section button {
             margin-right: 20px;
-            background-color: #adab1b;
+            background-color: #b88eb3f8;
             color: #ffffff;
             border: none;
-            padding: 10px 20px;
+            padding: 15px 20px;
             border-radius: 15px;
             cursor: pointer;
             font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
         }
         .search-section button:hover {
-            background-color: #a3943c;
+            background-color: #eeb8e9f8;
         }
         .news-section {
             text-align: center;
@@ -183,33 +188,80 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .best-seller-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            cursor: grab;
+            user-select: none;
+        }
+        .best-seller-item {
+            display: inline-block;
+            margin-right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            transition: transform 0.3s ease-in-out;
+        }
+        .best-seller-item:hover {
+            transform: scale(1.05);
+        }
+        .best-seller-item img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    <header class="main-header">
-        
-        <img src="./GARGANTILLAS/logo2.png"  alt="Logo de la tienda">
-        
+    <header class="secondary-header">
+        <p>20% A partir de 2 piezas</p>
     </header>
 
-    <header class="secondary-header">
-        <p>Envío gratis en compras mayores a $50</p>
+    <header class="main-header">
+        <img src="./GARGANTILLAS/logo2.png"  alt="Logo de la tienda">
     </header>
 
     <section class="news-section">
-        <h2>Últimas noticias</h2>
         
-        <img src="./GARGANTILLAS/noticia1.png" height="350px" alt="Noticias">
+        <img src="./GARGANTILLAS/noticia1.png" height="300px" alt="Noticias">
     </section>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="anillos.html">Anillos</a></li>
-            <li><a href="gargantillas.html">Gargantillas</a></li>
-            <li><a href="cadenas.html">Cadenas</a></li>
-            <li><a href="joyeros.html">Joyeros</a></li>
-        </ul>
-    </nav>
+    <section class="best-seller-section">
+        <h2>Best Seller</h2>
+        <div class="best-seller-container" onmousedown="startDrag(event)" onmouseup="endDrag()">
+            <div class="best-seller-item">
+                <img src="./GARGANTILLAS/1.png" alt="Best Seller 1">
+                <p>Nombre del producto 1</p>
+            </div>
+            <div class="best-seller-item">
+                <img src="./GARGANTILLAS/pulsera1.png" alt="Best Seller 2">
+                <p>Nombre del producto 2</p>
+            </div>
+            <div class="best-seller-item">
+                <img src="./GARGANTILLAS/cadena1.png" alt="Best Seller 3">
+                <p>Nombre del producto 3</p>
+            </div>
+            <div class="best-seller-item">
+                <img src="./GARGANTILLAS/3.png" alt="Best Seller 1">
+                <p>Nombre del producto 1</p>
+            </div>
+            <div class="best-seller-item">
+                <img src="./GARGANTILLAS/4.png" alt="Best Seller 1">
+                <p>Nombre del producto 1</p>
+            </div>
+            <div class="best-seller-item">
+                <img src="./GARGANTILLAS/5.png" alt="Best Seller 1">
+                <p>Nombre del producto 1</p>
+            </div>
+            <div class="best-seller-item">
+                <img src="./GARGANTILLAS/6.png" alt="Best Seller 1">
+                <p>Nombre del producto 1</p>
+            </div>
+            <!-- Agrega más elementos según sea necesario -->
+            
+        </div>
+    </section>
 
     <section>
         <div class="search-section">
@@ -344,6 +396,31 @@
             var modal = document.getElementById('myModal');
             modal.style.display = 'none';
         }
+
+        // Variables para el desplazamiento horizontal de la sección de "Lo más vendido"
+        var isDragging = false;
+        var initialMouseX = 0;
+        var scrollX = 0;
+
+        // Función para iniciar el arrastre
+        function startDrag(event) {
+            isDragging = true;
+            initialMouseX = event.clientX;
+            scrollX = document.querySelector('.best-seller-container').scrollLeft;
+        }
+
+        // Función para finalizar el arrastre
+        function endDrag() {
+            isDragging = false;
+        }
+
+        // Función para actualizar el desplazamiento horizontal durante el arrastre
+        document.addEventListener('mousemove', function(event) {
+            if (isDragging) {
+                const delta = event.clientX - initialMouseX;
+                document.querySelector('.best-seller-container').scrollLeft = scrollX - delta;
+            }
+        });
     </script>
 </body>
 </html>

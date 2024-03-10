@@ -12,18 +12,20 @@
             padding: 0;
         }
         .main-header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 30px;
             text-align: center;
             position: relative;
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
         }
         .secondary-header {
-            background-color: #555;
+            background-color: #000000;
             color: #fff;
-            padding: 5px; /* Ajuste de padding */
+            padding: .3px; /* Ajuste de padding */
             text-align: center;
             font-size: 14px; /* Ajuste de tamaño de fuente */
+            
         }
         nav {
             background-color: #f4f4f4;
@@ -34,6 +36,7 @@
             top: 60px; /* Ajusta esta línea según sea necesario */
             left: 10px;
             z-index: 1;
+            
         }
         nav ul {
             list-style-type: none;
@@ -53,6 +56,7 @@
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #ddd;
+            
         }
         nav ul li a:hover {
             background-color: #ccc;
@@ -73,6 +77,18 @@
             padding: 10px;
             display: inline-block; /* Ajuste para permitir el desplazamiento horizontal */
             transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
+            position: relative; /* Agregar posición relativa para el sombreado */
+        }
+        .product::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px; /* Altura de la sombra */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%); /* Degradado para la sombra */
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
         .product:hover {
             transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el ratón */
@@ -81,41 +97,52 @@
             max-width: 100%;
             border-radius: 5px;
         }
-        .product-info {
-            text-align: center;
-            margin-top: 10px;
+        .product-info .discount-label {
+            position: absolute;
+            top: -20px; /* Posición del texto encima del precio */
+            left: 10px; /* Ajusta esta línea para el espaciado izquierdo */
+            background-color: #adab1b;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+        }
+        .product-info p {
+            color: #333; /* Color del precio */
         }
         .product-info .colors {
             display: none; /* Oculta la lista de colores inicialmente */
             margin-top: 10px;
         }
-        .product-info .colors button {
-            margin-right: 10px;
-            background-color: #7e8337;
+        .product-info button {
+            background-color: #adab1b;
             color: #fff;
             border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 15px;
             cursor: pointer;
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
         }
-        .product-info .colors button:hover {
-            background-color: #0056b3;
+        .product-info button:hover {
+            background-color: #a3943c;
         }
         .search-section {
             text-align: center;
             margin-bottom: 20px;
+            
         }
         .search-section button {
-            margin-right: 10px;
-            background-color: #007bff;
-            color: #fff;
+            margin-right: 15px;
+            background-color: #adab1b;
+            color: #ffffff;
             border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 15px;
             cursor: pointer;
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
         }
         .search-section button:hover {
-            background-color: #0056b3;
+            background-color: #a3943c;
         }
         .news-section {
             text-align: center;
@@ -124,21 +151,55 @@
         .news-section img {
             max-width: 100%;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header class="main-header">
-        <h1>Catalogo BY AANGEEL</h1>
-        <img src="tu_logo.png"  alt="Logo de la tienda">
+        
+        <img src="logo2.png"  alt="Logo de la tienda">
+        
     </header>
 
     <header class="secondary-header">
-        <p>Compras mayores a 2pz tun 20%</p>
+        <p>Envío gratis en compras mayores a $50</p>
     </header>
 
     <section class="news-section">
         <h2>Últimas noticias</h2>
-        <img src="./GARGANTILLAS/nuevanoticia.png" height="350px" alt="Noticias">
+        
+        <img src="noticia1.png" height="350px" alt="Noticias">
     </section>
 
     <nav id="menu">
@@ -156,7 +217,7 @@
             <button onclick="showProducts('anillos')">Anillos</button>
             <button onclick="showProducts('cadenas')">Cadenas</button>
             <button onclick="showProducts('joyeros')">Joyeros</button>
-            <button onclick="showProducts('conjuntos')">Conjuntos</button>
+            <button onclick="showProducts('pulseras y brazaletes')">Pulseras y Brazaletes</button>
             <!-- Agrega más botones según sea necesario -->
         </div>
     </section>
@@ -165,8 +226,30 @@
         <!-- Aquí se mostrarán los productos -->
     </section>
 
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-content">
+                <h2>Disponibles</h2>
+                <ul id="available-models">
+                    <!-- Aquí se mostrarán los modelos disponibles -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         var productos = document.getElementById('productos');
+
+        // Datos de ejemplo: modelos disponibles para cada producto
+        var availableModels = {
+            '1.png': ['Modelo 1', 'Modelo 2', 'Modelo 3'],
+            'anillo1.jpg': ['Modelo A', 'Modelo B', 'Modelo C'],
+            'gargantilla1.jpg': ['Modelo X', 'Modelo Y', 'Modelo Z'],
+            'joyero1.jpg': ['Modelo I', 'Modelo II', 'Modelo III'],
+            'conjunto1.jpg': ['Modelo A', 'Modelo B', 'Modelo C']
+        };
 
         // Función para mostrar productos de una categoría
         function showProducts(category) {
@@ -178,221 +261,58 @@
                 productosHTML += `
                     <h2 style="color: #333;">Gargantillas</h2>
                     <div class="product">
-                        <img src="./GARGANTILLAS/gargantilla1.png" alt="Gargantillas">
+                        <img src="1.png" alt="gargantila 1">
                         <div class="product-info">
-                            <p style="color: #333;">Gargantillas Ojo Turco $129</p>
-                             <!-- Botones, información adicional, etc. -->
+                            <p style="color: #333;">Precio: $129</p> 
+                            <button class="ver-disponibles" onclick="openModal('1.png')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
                         </div>
                     </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/gargantilla2.png" alt="Gargantillas">
-                        <div class="product-info">
-                            <p style="color: #333;">Gargantillas $129</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/gargantilla3.png" alt="Gargantillas">
-                        <div class="product-info">
-                            <p style="color: #333;">Gargantillas $139</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/4.png" alt="Gargantillas">
-                        <div class="product-info">
-                            <p style="color: #333;">Gargantillas $149</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/5.png" alt="Gargantillas">
-                        <div class="product-info">
-                            <p style="color: #333;">Gargantillas $149</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/6.png" alt="Gargantillas">
-                        <div class="product-info">
-                            <p style="color: #333;">Gargantillas Oro Laminado $169</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/7.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $139</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/8.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $79</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/9.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $79</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/10.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $149</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/11.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $259</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/12.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $219</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/13.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $289</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/14.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $179</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/15.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $179</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/16.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $159</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/17.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $159</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/18.png" alt="Cadena 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $159</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    
-                    <!-- Agrega más productos de cadenas según sea necesario -->
+                    <!-- Agrega más productos de gargantillas según sea necesario -->
                 `;
             } else if (category === 'anillos') {
                 productosHTML += `
                     <h2 style="color: #333;">Anillos</h2>
                     <div class="product">
-                        <img src="anillo1.jpg" alt="Anillo 1">
+                        <img src="anillo1.png" alt="Anillo 1">
                         <div class="product-info">
                             <p style="color: #333;">Precio: $70</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="anillo2.jpg" alt="Anillo 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $80</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    
-                    <div class="product">
-                        <img src="anillo1.jpg" alt="Anillo 3">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $70</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="anillo2.jpg" alt="Anillo 4 ">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $80</p>
-                            <!-- Botones, información adicional, etc. -->
+                            <button class="ver-disponibles" onclick="openModal('anillo1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
                         </div>
                     </div>
                     <!-- Agrega más productos de anillos según sea necesario -->
                 `;
             } else if (category === 'cadenas') {
                 productosHTML += `
-                    <h2 style="color: #333;">cadenas</h2>
+                    <h2 style="color: #333;">Cadenas</h2>
                     <div class="product">
-                        <img src="gargantilla1.jpg" alt="Gargantilla 1">
+                        <img src="cadena1.png" alt="cadenas">
                         <div class="product-info">
                             <p style="color: #333;">Precio: $90</p>
-                            <!-- Botones, información adicional, etc. -->
+                            <button class="ver-disponibles" onclick="openModal('gargantilla1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
                         </div>
                     </div>
-                    <div class="product">
-                        <img src="gargantilla2.jpg" alt="Gargantilla 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $100</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <!-- Agrega más productos de gargantillas según sea necesario -->
+                    <!-- Agrega más productos de cadenas según sea necesario -->
                 `;
             } else if (category === 'joyeros') {
                 productosHTML += `
                     <h2 style="color: #333;">Joyeros</h2>
                     <div class="product">
-                        <img src="joyero1.jpg" alt="Joyero 1">
+                        <img src="joyero1.png" alt="Joyero 1">
                         <div class="product-info">
                             <p style="color: #333;">Precio: $75</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="joyero2.jpg" alt="Joyero 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $90</p>
-                            <!-- Botones, información adicional, etc. -->
+                            <button class="ver-disponibles" onclick="openModal('joyero1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
                         </div>
                     </div>
                     <!-- Agrega más productos de joyeros según sea necesario -->
                 `;
-            } else if (category === 'conjuntos') {
+            } else if (category === 'pulseras y brazaletes') {
                 productosHTML += `
                     <h2 style="color: #333;">Conjuntos</h2>
                     <div class="product">
-                        <img src="conjunto1.jpg" alt="Conjunto 1">
+                        <img src="pulsera1.png" alt="Conjunto 1">
                         <div class="product-info">
                             <p style="color: #333;">Precio: $100</p>
-                            <!-- Botones, información adicional, etc. -->
-                        </div>
-                    </div>
-                    <div class="product">
-                        <img src="conjunto2.jpg" alt="Conjunto 2">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $120</p>
-                            <!-- Botones, información adicional, etc. -->
+                            <button class="ver-disponibles" onclick="openModal('conjunto1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
                         </div>
                     </div>
                     <!-- Agrega más productos de conjuntos según sea necesario -->
@@ -401,6 +321,28 @@
 
             // Mostrar los productos en la sección correspondiente
             productos.innerHTML = productosHTML;
+        }
+
+        // Función para abrir la ventana modal y mostrar modelos disponibles para el producto seleccionado
+        function openModal(productImage) {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+            // Obtener los modelos disponibles para el producto seleccionado
+            var models = availableModels[productImage];
+            // Mostrar los modelos disponibles en la ventana modal
+            var availableModelsList = document.getElementById('available-models');
+            availableModelsList.innerHTML = '';
+            models.forEach(function(model) {
+                var listItem = document.createElement('li');
+                listItem.textContent = model;
+                availableModelsList.appendChild(listItem);
+            });
+        }
+
+        // Función para cerrar la ventana modal
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
         }
     </script>
 </body>

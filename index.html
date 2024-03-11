@@ -14,7 +14,7 @@
         .main-header {
             background-color: #ffffff;
             color: #000000;
-            padding: 30px;
+            padding: 15px;
             text-align: center;
             position: relative;
             font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
@@ -126,6 +126,7 @@
             padding: 10px 15px;
             border-radius: 15px;
             cursor: pointer;
+            
            
         }
         .product-info button:hover {
@@ -211,6 +212,12 @@
             display: block;
             margin: 0 auto;
         }
+        /* Estilo para la sección "Lo más vendido" */
+        .best-seller-section h2 {
+            font-family: 'Times New Roman', Times, serif; /* Cambia la tipografía */
+            text-align: center; /* Centra el texto */
+            color: #eeb8e9f8; /* Color rosa */
+        }
     </style>
 </head>
 <body>
@@ -219,16 +226,16 @@
     </header>
 
     <header class="main-header">
-        <img src="./GARGANTILLAS/logo2.png" height="100px" alt="Logo de la tienda">
+        <img src="./GARGANTILLAS/logo3.png" height="70px" alt="Logo de la tienda">
     </header>
 
     <section class="news-section">
         
-        <img src="./GARGANTILLAS/noticia1.png" height="250px" alt="Noticias">
+        <img src="./GARGANTILLAS/noticias3.png"  alt="Noticias">
     </section>
 
     <section class="best-seller-section">
-        <h2>Best Seller</h2>
+        <h2>LO + VENDIDO</h2>
         <div class="best-seller-container" onmousedown="startDrag(event)" onmouseup="endDrag()">
             <div class="best-seller-item">
                 <img src="./GARGANTILLAS/1.png" alt="Best Seller 1">
@@ -310,24 +317,23 @@
             // mostraré algunos productos de ejemplo.
             var productosHTML = '';
             if (category === 'gargantillas') {
+    productosHTML += `
+        <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">GARGANTILLAS</h2>
+        <div class="product">
+            <img src="./GARGANTILLAS/1.png" alt="gargantila 1">
+            <div class="product-info">
+                <p style="color: #000000; font-family: 'Times New Roman', Times, serif;">Precio: $129</p> 
+                <button class="ver-disponibles" onclick="openModal('1.png')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
+            </div>
+        </div>
+    `;
+} else if (category === 'anillos') {
                 productosHTML += `
-                    <h2 style="color: #333;">Gargantillas</h2>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/1.png" alt="gargantila 1">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $129</p> 
-                            <button class="ver-disponibles" onclick="openModal('1.png')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
-                        </div>
-                    </div>
-                    <!-- Agrega más productos de gargantillas según sea necesario -->
-                `;
-            } else if (category === 'anillos') {
-                productosHTML += `
-                    <h2 style="color: #333;">Anillos</h2>
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">ANILLO</h2>
                     <div class="product">
                         <img src="./GARGANTILLAS/anillo1.png" alt="Anillo 1">
                         <div class="product-info">
-                            <p style="color: #333;">Precio: $70</p>
+                            <p style="color: #000000; font-family: 'Times New Roman', Times, serif;">Precio</p>$70</p>
                             <button class="ver-disponibles" onclick="openModal('anillo1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
                         </div>
                     </div>
@@ -335,7 +341,7 @@
                 `;
             } else if (category === 'cadenas') {
                 productosHTML += `
-                    <h2 style="color: #333;">Cadenas</h2>
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">CADENAS</h2>
                     <div class="product">
                         <img src="./GARGANTILLAS/cadena1.png" alt="cadenas">
                         <div class="product-info">
@@ -347,7 +353,7 @@
                 `;
             } else if (category === 'joyeros') {
                 productosHTML += `
-                    <h2 style="color: #333;">Joyeros</h2>
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">JOYEROS</h2>
                     <div class="product">
                         <img src="./GARGANTILLAS/joyero1.png" alt="Joyero 1">
                         <div class="product-info">
@@ -359,7 +365,7 @@
                 `;
             } else if (category === 'pulseras y brazaletes') {
                 productosHTML += `
-                    <h2 style="color: #333;">Conjuntos</h2>
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">PULSERAS</h2>
                     <div class="product">
                         <img src="./GARGANTILLAS/pulsera1.png" alt="Conjunto 1">
                         <div class="product-info">

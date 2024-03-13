@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BY AANGEEL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .main-header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+        }
+        .secondary-header {
+            background-color: #eeb8e9f8;
+            color: #fff;
+            padding: .3px; /* Ajuste de padding */
+            text-align: center;
+            font-size: 15px; /* Ajuste de tamaño de fuente */
+            
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: left;
+            display: none;
+            position: absolute;
+            top: 60px; /* Ajusta esta línea según sea necesario */
+            left: 10px;
+            z-index: 1;
+            
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block; /* Cambio para que los elementos se muestren en línea */
+            margin-right: 10px; /* Espacio entre los elementos */
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            align-items: center; /* Centra verticalmente el texto e icono */
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ddd;
+            
+        }
+        nav ul li a img {
+            max-width: 20px; /* Tamaño máximo de la imagen */
+            margin-right: 5px; /* Espacio entre la imagen y el texto */
+        }
+        nav ul li a:hover {
+            background-color: #ccc;
+        }
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste del número de columnas y el ancho mínimo/máximo */
+            grid-gap: 20px; /* Espacio entre las columnas */
+            padding: 20px; /* Ajuste del espacio interior */
+            overflow-x: auto; /* Activar desplazamiento horizontal */
+            white-space: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
+            scroll-behavior: smooth; /* Activar desplazamiento suave */
+            -webkit-overflow-scrolling: touch; /* Activar desplazamiento suave en dispositivos iOS */
+        }
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block; /* Ajuste para permitir el desplazamiento horizontal */
+            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
+            position: relative; /* Agregar posición relativa para el sombreado */
+        }
+        .product::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px; /* Altura de la sombra */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%); /* Degradado para la sombra */
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .product:hover {
+            transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el ratón */
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .product-info .discount-label {
+            position: absolute;
+            top: -20px; /* Posición del texto encima del precio */
+            left: 10px; /* Ajusta esta línea para el espaciado izquierdo */
+            background-color: #eeb8e9f8;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+        }
+        .product-info p {
+            color: #333; /* Color del precio */
+        }
+        .product-info .colors {
+            display: none; /* Oculta la lista de colores inicialmente */
+            margin-top: 10px;
+        }
+        .product-info button {
+            background-color: #b88eb3f8;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            
+           
+        }
+        .product-info button:hover {
+            background-color: #eeb8e9f8;
+        }
+        .search-section {
+            text-align: center;
+            margin-bottom: 20px;
+            
+        }
+        .search-section button {
+            margin-right: 20px;
+            background-color: #b88eb3f8;
+            color: #ffffff;
+            border: none;
+            padding: 15px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+        }
+        .search-section button:hover {
+            background-color: #eeb8e9f8;
+        }
+        .news-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .news-section img {
+            max-width: 100%;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="secondary-header">
+        <p>20% A partir de 2 piezas</p>
+    </header>
+
+    <header class="main-header">
+        <img src="logo3.png" height="70px" alt="Logo de la tienda">
+    </header>
+    <section>
+        <div class="search-section">
+            <a href="index.html" class="button-link" style="margin-right: 30px;">
+                <i class="fas fa-home"></i></a>
+            <button onclick="showProducts('gargantillas')">Gargantillas</button>
+            <button onclick="showProducts('anillos')">Anillos</button>
+            <button onclick="showProducts('cadenas')">Cadenas</button>
+            <button onclick="showProducts('joyeros')">Joyeros</button>
+            <button onclick="showProducts('pulseras y brazaletes')">Pulseras y Brazaletes</button>
+            <!-- Agrega más botones según sea necesario -->
+        </div>
+    </section>
+
+    <section class="products-container" id="productos">
+        <!-- Aquí se mostrarán los productos -->
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-content">
+                <h2>Disponibles</h2>
+                <ul id="available-models">
+                    <!-- Aquí se mostrarán los modelos disponibles -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var productos = document.getElementById('productos');
+
+        // Datos de ejemplo: modelos disponibles para cada producto
+        var availableModels = {
+            '1.png': ['Modelo 1', 'Modelo 2', 'Modelo 3'],
+            'anillo1.jpg': ['Modelo A', 'Modelo B', 'Modelo C'],
+            'gargantilla1.jpg': ['Modelo X', 'Modelo Y', 'Modelo Z'],
+            'joyero1.jpg': ['Modelo I', 'Modelo II', 'Modelo III'],
+            'conjunto1.jpg': ['Modelo A', 'Modelo B', 'Modelo C']
+        };
+
+        // Función para mostrar productos de una categoría
+        function showProducts(category) {
+            // Lógica para mostrar productos correspondientes a la categoría
+            // Aquí deberías cargar los productos desde una base de datos o archivo JSON, pero por simplicidad,
+            // mostraré algunos productos de ejemplo.
+            var productosHTML = '';
+            if (category === 'gargantillas') {
+    productosHTML += `
+        <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">GARGANTILLAS</h2>
+        <div class="product">
+            <img src="1.png" alt="gargantila 1">
+            <div class="product-info">
+                <p style="color: #000000; font-family: 'Times New Roman', Times, serif;">Precio: $129</p> 
+                <button class="ver-disponibles" onclick="openModal('1.png')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
+            </div>
+        </div>
+    `;
+} else if (category === 'anillos') {
+                productosHTML += `
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">ANILLO</h2>
+                    <div class="product">
+                        <img src="anillo1.png" alt="Anillo 1">
+                        <div class="product-info">
+                            <p style="color: #000000; font-family: 'Times New Roman', Times, serif;">Precio</p>$70</p>
+                            <button class="ver-disponibles" onclick="openModal('anillo1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
+                        </div>
+                    </div>
+                    <!-- Agrega más productos de anillos según sea necesario -->
+                `;
+            } else if (category === 'cadenas') {
+                productosHTML += `
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">CADENAS</h2>
+                    <div class="product">
+                        <img src="cadena1.png" alt="cadenas">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $90</p>
+                            <button class="ver-disponibles" onclick="openModal('gargantilla1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
+                        </div>
+                    </div>
+                    <!-- Agrega más productos de cadenas según sea necesario -->
+                `;
+            } else if (category === 'joyeros') {
+                productosHTML += `
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">JOYEROS</h2>
+                    <div class="product">
+                        <img src="joyero1.png" alt="Joyero 1">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $75</p>
+                            <button class="ver-disponibles" onclick="openModal('joyero1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
+                        </div>
+                    </div>
+                    <!-- Agrega más productos de joyeros según sea necesario -->
+                `;
+            } else if (category === 'pulseras y brazaletes') {
+                productosHTML += `
+                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">PULSERAS</h2>
+                    <div class="product">
+                        <img src="pulsera1.png" alt="Conjunto 1">
+                        <div class="product-info">
+                            <p style="color: #333;">Precio: $100</p>
+                            <button class="ver-disponibles" onclick="openModal('conjunto1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
+                        </div>
+                    </div>
+                    <!-- Agrega más productos de conjuntos según sea necesario -->
+                `;
+            }
+
+            // Mostrar los productos en la sección correspondiente
+            productos.innerHTML = productosHTML;
+        }
+
+        // Función para abrir la ventana modal y mostrar modelos disponibles para el producto seleccionado
+        function openModal(productImage) {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+            // Obtener los modelos disponibles para el producto seleccionado
+            var models = availableModels[productImage];
+            // Mostrar los modelos disponibles en la ventana modal
+            var availableModelsList = document.getElementById('available-models');
+            availableModelsList.innerHTML = '';
+            models.forEach(function(model) {
+                var listItem = document.createElement('li');
+                listItem.textContent = model;
+                availableModelsList.appendChild(listItem);
+            });
+        }
+
+        // Función para cerrar la ventana modal
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

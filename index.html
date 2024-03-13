@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda de Joyería</title>
+    <title>BY AANGEEL</title>
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
     <style>
         body {
@@ -218,6 +219,60 @@
             text-align: center; /* Centra el texto */
             color: #eeb8e9f8; /* Color rosa */
         }
+
+        /* Estilos para el nuevo footer */
+        footer {
+            background-color: #fffffff8;
+            color: #eeb8e9f8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        footer .contact-info,
+        footer .social-media {
+            flex-basis: 50%;
+        }
+
+        footer .contact-info img,
+        footer .social-media img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        footer .contact-info p,
+        footer .social-media p {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Estilo para los nombres de los productos más vendidos */
+        .best-seller-item p {
+            font-family: 'Times New Roman', Times, serif; /* Cambia la tipografía */
+            color: #b88eb3f8; /* Color rosa */
+        }
+         /* Estilos para las imágenes debajo del botón "VER CATÁLOGO" */
+         .horizontal-images {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+            margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+        }
+
+        .horizontal-images img {
+            max-width: 200px; /* Ajusta el tamaño máximo de las imágenes según sea necesario */
+            height: auto;
+            margin-right: 10px; /* Espacio entre las imágenes */
+            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
+        }
+
+        /* Agrega la animación al pasar el cursor sobre las imágenes */
+        .horizontal-images img:hover {
+            transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+        }
     </style>
 </head>
 <body>
@@ -230,7 +285,6 @@
     </header>
 
     <section class="news-section">
-        
         <img src="./GARGANTILLAS/noticias3.png"  alt="Noticias">
     </section>
 
@@ -264,170 +318,35 @@
             <div class="best-seller-item">
                 <img src="./GARGANTILLAS/6.png" alt="Best Seller 1">
                 <p>Nombre del producto 1</p>
-            </div>
-            <!-- Agrega más elementos según sea necesario -->
-            
+            </div> <!-- Contenido de los productos más vendidos -->
         </div>
     </section>
-
+ 
     <section>
         <div class="search-section">
-            <button onclick="showProducts('gargantillas')">Gargantillas</button>
-            <button onclick="showProducts('anillos')">Anillos</button>
-            <button onclick="showProducts('cadenas')">Cadenas</button>
-            <button onclick="showProducts('joyeros')">Joyeros</button>
-            <button onclick="showProducts('pulseras y brazaletes')">Pulseras y Brazaletes</button>
-            <!-- Agrega más botones según sea necesario -->
+            <a href="PRRODUCTO.html" class="button-link">
+                <button onclick="showProducts('PRRODUCTO.html')">VER CATÁLOGO</button>
+            </a>
+            <div class="horizontal-images">
+                <img src="./GARGANTILLAS/15.png" alt="Imagen 1">
+                <img src="./GARGANTILLAS/17.png" alt="Imagen 2">
+                <img src="./GARGANTILLAS/18.png" alt="Imagen 3">
+                <!-- Agrega más imágenes según sea necesario -->
+            </div>
         </div>
     </section>
 
-    <section class="products-container" id="productos">
-        <!-- Aquí se mostrarán los productos -->
-    </section>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modal-content">
-                <h2>Disponibles</h2>
-                <ul id="available-models">
-                    <!-- Aquí se mostrarán los modelos disponibles -->
-                </ul>
-            </div>
+    <!-- Nuevo footer al final de la página -->
+    <footer>
+        <div class="contact-info" style="text-align: center;">
+            <img src="./GARGANTILLAS/mexico.png" alt="Contacto">
+            <p>ENVIOS A TODO MEXICO</p>
         </div>
-    </div>
-
-    <script>
-        var productos = document.getElementById('productos');
-
-        // Datos de ejemplo: modelos disponibles para cada producto
-        var availableModels = {
-            '1.png': ['Modelo 1', 'Modelo 2', 'Modelo 3'],
-            'anillo1.jpg': ['Modelo A', 'Modelo B', 'Modelo C'],
-            'gargantilla1.jpg': ['Modelo X', 'Modelo Y', 'Modelo Z'],
-            'joyero1.jpg': ['Modelo I', 'Modelo II', 'Modelo III'],
-            'conjunto1.jpg': ['Modelo A', 'Modelo B', 'Modelo C']
-        };
-
-        // Función para mostrar productos de una categoría
-        function showProducts(category) {
-            // Lógica para mostrar productos correspondientes a la categoría
-            // Aquí deberías cargar los productos desde una base de datos o archivo JSON, pero por simplicidad,
-            // mostraré algunos productos de ejemplo.
-            var productosHTML = '';
-            if (category === 'gargantillas') {
-    productosHTML += `
-        <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">GARGANTILLAS</h2>
-        <div class="product">
-            <img src="./GARGANTILLAS/1.png" alt="gargantila 1">
-            <div class="product-info">
-                <p style="color: #000000; font-family: 'Times New Roman', Times, serif;">Precio: $129</p> 
-                <button class="ver-disponibles" onclick="openModal('1.png')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
-            </div>
+        <div class="social-media" style="text-align: center;">
+            <img src="./GARGANTILLAS/entregas.png" alt="Redes Sociales">
+            <p>ENTREGAS SEGURAS</p>
         </div>
-    `;
-} else if (category === 'anillos') {
-                productosHTML += `
-                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">ANILLO</h2>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/anillo1.png" alt="Anillo 1">
-                        <div class="product-info">
-                            <p style="color: #000000; font-family: 'Times New Roman', Times, serif;">Precio</p>$70</p>
-                            <button class="ver-disponibles" onclick="openModal('anillo1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
-                        </div>
-                    </div>
-                    <!-- Agrega más productos de anillos según sea necesario -->
-                `;
-            } else if (category === 'cadenas') {
-                productosHTML += `
-                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">CADENAS</h2>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/cadena1.png" alt="cadenas">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $90</p>
-                            <button class="ver-disponibles" onclick="openModal('gargantilla1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
-                        </div>
-                    </div>
-                    <!-- Agrega más productos de cadenas según sea necesario -->
-                `;
-            } else if (category === 'joyeros') {
-                productosHTML += `
-                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">JOYEROS</h2>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/joyero1.png" alt="Joyero 1">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $75</p>
-                            <button class="ver-disponibles" onclick="openModal('joyero1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
-                        </div>
-                    </div>
-                    <!-- Agrega más productos de joyeros según sea necesario -->
-                `;
-            } else if (category === 'pulseras y brazaletes') {
-                productosHTML += `
-                    <h2 style="color: #b88eb3f8; font-family: 'Times New Roman', Times, serif;">PULSERAS</h2>
-                    <div class="product">
-                        <img src="./GARGANTILLAS/pulsera1.png" alt="Conjunto 1">
-                        <div class="product-info">
-                            <p style="color: #333;">Precio: $100</p>
-                            <button class="ver-disponibles" onclick="openModal('conjunto1.jpg')">Ver Disponibles</button> <!-- Botón de ver modelos disponibles -->
-                        </div>
-                    </div>
-                    <!-- Agrega más productos de conjuntos según sea necesario -->
-                `;
-            }
-
-            // Mostrar los productos en la sección correspondiente
-            productos.innerHTML = productosHTML;
-        }
-
-        // Función para abrir la ventana modal y mostrar modelos disponibles para el producto seleccionado
-        function openModal(productImage) {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'block';
-            // Obtener los modelos disponibles para el producto seleccionado
-            var models = availableModels[productImage];
-            // Mostrar los modelos disponibles en la ventana modal
-            var availableModelsList = document.getElementById('available-models');
-            availableModelsList.innerHTML = '';
-            models.forEach(function(model) {
-                var listItem = document.createElement('li');
-                listItem.textContent = model;
-                availableModelsList.appendChild(listItem);
-            });
-        }
-
-        // Función para cerrar la ventana modal
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'none';
-        }
-
-        // Variables para el desplazamiento horizontal de la sección de "Lo más vendido"
-        var isDragging = false;
-        var initialMouseX = 0;
-        var scrollX = 0;
-
-        // Función para iniciar el arrastre
-        function startDrag(event) {
-            isDragging = true;
-            initialMouseX = event.clientX;
-            scrollX = document.querySelector('.best-seller-container').scrollLeft;
-        }
-
-        // Función para finalizar el arrastre
-        function endDrag() {
-            isDragging = false;
-        }
-
-        // Función para actualizar el desplazamiento horizontal durante el arrastre
-        document.addEventListener('mousemove', function(event) {
-            if (isDragging) {
-                const delta = event.clientX - initialMouseX;
-                document.querySelector('.best-seller-container').scrollLeft = scrollX - delta;
-            }
-        });
-    </script>
+    </footer>
 </body>
 </html>
 

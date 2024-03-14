@@ -66,72 +66,97 @@
         nav ul li a:hover {
             background-color: #ccc;
         }
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste del número de columnas y el ancho mínimo/máximo */
-            grid-gap: 20px; /* Espacio entre las columnas */
-            padding: 20px; /* Ajuste del espacio interior */
-            overflow-x: auto; /* Activar desplazamiento horizontal */
-            white-space: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
-            scroll-behavior: smooth; /* Activar desplazamiento suave */
-            -webkit-overflow-scrolling: touch; /* Activar desplazamiento suave en dispositivos iOS */
-        }
-        .product {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            display: inline-block; /* Ajuste para permitir el desplazamiento horizontal */
-            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
-            position: relative; /* Agregar posición relativa para el sombreado */
-        }
-        .product::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10px; /* Altura de la sombra */
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%); /* Degradado para la sombra */
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-        .product:hover {
-            transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el ratón */
-        }
-        .product img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        .product-info .discount-label {
-            position: absolute;
-            top: -20px; /* Posición del texto encima del precio */
-            left: 10px; /* Ajusta esta línea para el espaciado izquierdo */
-            background-color: #eeb8e9f8;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
-        }
-        .product-info p {
-            color: #333; /* Color del precio */
-        }
-        .product-info .colors {
-            display: none; /* Oculta la lista de colores inicialmente */
-            margin-top: 10px;
-        }
-        .product-info button {
-            background-color: #b88eb3f8;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 15px;
-            cursor: pointer;
-            
-           
-        }
-        .product-info button:hover {
-            background-color: #eeb8e9f8;
-        }
+       /* Estilos para contenedor de productos */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste del número de columnas y el ancho mínimo/máximo */
+    grid-gap: 20px; /* Espacio entre las columnas */
+    padding: 20px; /* Ajuste del espacio interior */
+    overflow-x: auto; /* Activar desplazamiento horizontal */
+    white-space: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
+    scroll-behavior: smooth; /* Activar desplazamiento suave */
+    -webkit-overflow-scrolling: touch; /* Activar desplazamiento suave en dispositivos iOS */
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block; /* Ajuste para permitir el desplazamiento horizontal */
+    transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
+    position: relative; /* Agregar posición relativa para el sombreado */
+    width: 100%; /* Para que se ajuste al contenedor */
+}
+
+.product::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Altura de la sombra */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%); /* Degradado para la sombra */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.product:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el ratón */
+}
+
+.product img {
+    max-width: 100%; /* Hacer que la imagen se ajuste al contenedor */
+    border-radius: 5px;
+}
+
+.product-info .discount-label {
+    position: absolute;
+    top: -20px; /* Posición del texto encima del precio */
+    left: 10px; /* Ajusta esta línea para el espaciado izquierdo */
+    background-color: #eeb8e9f8;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+}
+
+.product-info p {
+    color: #333; /* Color del precio */
+}
+
+.product-info .colors {
+    display: none; /* Oculta la lista de colores inicialmente */
+    margin-top: 10px;
+}
+
+.product-info button {
+    background-color: #b88eb3f8;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.product-info button:hover {
+    background-color: #eeb8e9f8;
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .products-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .product {
+        width: 120px;
+    }
+    .product img {
+        max-width: 80px;
+    }
+    .product-info {
+        font-size: 12px;
+    }
+}
         .search-section {
             text-align: center;
             margin-bottom: 20px;

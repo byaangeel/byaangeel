@@ -13,21 +13,18 @@
             padding: 0;
         }
         .main-header {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 15px;
-            text-align: center;
-            position: relative;
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
-        }
-        .secondary-header {
-            background-color: #eeb8e9f8;
-            color: #fff;
-            padding: .3px; /* Ajuste de padding */
-            text-align: center;
-            font-size: 15px; /* Ajuste de tamaño de fuente */
-            
-        }
+        background-color: #ffffff;
+        color: #000000;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        top: 0; /* Fija el encabezado en la parte superior de la ventana */
+        width: 100%; /* Ancho completo del encabezado */
+        z-index: 999; /* Asegura que el encabezado esté por encima de otros elementos */
+        font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+         }
+
+        
         nav {
             background-color: #f4f4f4;
             padding: 10px;
@@ -136,7 +133,7 @@
         .search-section {
             text-align: center;
             margin-bottom: 20px;
-            
+            margin-top: 30px
         }
         .search-section button {
             margin-right: 20px;
@@ -208,11 +205,11 @@
             transform: scale(1.05);
         }
         .best-seller-item img {
-            max-width: 200px;
+            max-width: 150px; /* Ajusta el tamaño máximo de las imágenes de los productos más vendidos */
             height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+            margin-right: 1px; /* Espacio entre las imágenes */
+            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
+}
         /* Estilo para la sección "Lo más vendido" */
         .best-seller-section h2 {
             font-family: 'Times New Roman', Times, serif; /* Cambia la tipografía */
@@ -263,7 +260,7 @@
         }
 
         .horizontal-images img {
-            max-width: 200px; /* Ajusta el tamaño máximo de las imágenes según sea necesario */
+            max-width: 250px; /* Ajusta el tamaño máximo de las imágenes según sea necesario */
             height: auto;
             margin-right: 10px; /* Espacio entre las imágenes */
             transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
@@ -273,66 +270,106 @@
         .horizontal-images img:hover {
             transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
         }
+         .best-seller-item img {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .best-seller-item:hover img {
+        transform: scale(1.1);
+    }
+    .button-text {
+    text-align: center;
+    margin-top: 30px; /* Ajusta el margen superior según sea necesario */
+    font-family: 'Times New Roman', Times, serif; /* Cambia la tipografía */
+    color: #000000f8; /* Color rosa */
+}
+.large-text {
+    font-size: 24px; /* Tamaño del texto, ajusta según sea necesario */
+}
+.image-container {
+    text-align: center; /* Centra el texto debajo de la imagen */
+    margin-right: 10px; /* Espacio entre las imágenes */
+    margin-bottom: 5px;
+}
+
+.image-container .first-text {
+    font-size: 23px;
+    color: rgb(0, 0, 0); /* Estilo para el primer texto */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.image-container .second-text {
+    font-size: 14px;
+    color: rgb(0, 0, 0); /* Estilo para el segundo texto */
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -12px;
+}
     </style>
 </head>
 <body>
-    <header class="secondary-header">
-        <p>20% A partir de 2 piezas</p>
-    </header>
-
     <header class="main-header">
-        <img src="./GARGANTILLAS/logo3.png" height="70px" alt="Logo de la tienda">
+        <img src="./GARGANTILLAS/logo3.png" height="50px" alt="Logo de la tienda">
     </header>
 
     <section class="news-section">
-        <img src="./GARGANTILLAS/noticias3.png"  alt="Noticias">
+        <img src="./GARGANTILLAS/noticia20.png"  alt="Noticias">
     </section>
 
     <section class="best-seller-section">
         <h2>LO + VENDIDO</h2>
         <div class="best-seller-container" onmousedown="startDrag(event)" onmouseup="endDrag()">
             <div class="best-seller-item">
-                <img src="./GARGANTILLAS/1.png" alt="Best Seller 1">
-                <p>Nombre del producto 1</p>
+                <img src="./VENDIDO/1.png" alt="Best Seller 1">
+                <p>Gargantillas Ojo Turco</p>
             </div>
             <div class="best-seller-item">
-                <img src="./GARGANTILLAS/pulsera1.png" alt="Best Seller 2">
-                <p>Nombre del producto 2</p>
+                <img src="./VENDIDO/2.png" alt="Best Seller 2">
+                <p>Gagrgantillas Inicial Blancas</p>
             </div>
             <div class="best-seller-item">
-                <img src="./GARGANTILLAS/cadena1.png" alt="Best Seller 3">
-                <p>Nombre del producto 3</p>
+                <img src="./VENDIDO/3.png" alt="Best Seller 3">
+                <p>Gagrgantillas Inicial Negras</p>
             </div>
             <div class="best-seller-item">
-                <img src="./GARGANTILLAS/3.png" alt="Best Seller 1">
-                <p>Nombre del producto 1</p>
+                <img src="./VENDIDO/4.png" alt="Best Seller 1">
+                <p>Anillos Ajustables</p>
             </div>
             <div class="best-seller-item">
-                <img src="./GARGANTILLAS/4.png" alt="Best Seller 1">
-                <p>Nombre del producto 1</p>
+                <img src="./VENDIDO/5.png" alt="Best Seller 1">
+                <p>Pulseras Rolex Delgadas</p>
             </div>
             <div class="best-seller-item">
-                <img src="./GARGANTILLAS/5.png" alt="Best Seller 1">
-                <p>Nombre del producto 1</p>
+                <img src="./VENDIDO/6.png" alt="Best Seller 1">
+                <p>Pulseras Rolex Gruesas</p>
             </div>
-            <div class="best-seller-item">
-                <img src="./GARGANTILLAS/6.png" alt="Best Seller 1">
-                <p>Nombre del producto 1</p>
-            </div> <!-- Contenido de los productos más vendidos -->
+             <!-- Contenido de los productos más vendidos -->
         </div>
     </section>
  
     <section>
         <div class="search-section">
-            <a href="PRODUCTO.html" class="button-link">
-                <button onclick="showProducts('PRODUCTO.html')">VER CATÁLOGO</button>
+            <a href="PRRODUCTO.html" class="button-link">
+                <button onclick="showProducts('PRRODUCTO.html')">VER CATÁLOGO</button>
             </a>
-            <div class="horizontal-images">
-                <img src="./GARGANTILLAS/15.png" alt="Imagen 1">
-                <img src="./GARGANTILLAS/17.png" alt="Imagen 2">
-                <img src="./GARGANTILLAS/18.png" alt="Imagen 3">
-                <!-- Agrega más imágenes según sea necesario -->
+            <div class="button-text">
+                <p class="large-text">¡Vive la mejor experiencia de compra!😍</p>
             </div>
+            <div class="horizontal-images">
+                <div class="image-container">
+                    <img src="./NOTICIAS/1.png" alt="Imagen 1">
+                    <p class="first-text">Entregas Personales</p>
+                    <p class="second-text">Tehuacán y sus alrededores</p>
+                </div>
+                <div class="image-container">
+                    <img src="./NOTICIAS/2.png" alt="Imagen 2">
+                    <p class="first-text">Siempre Presentes en Expos</p>
+                    <p class="second-text">Dando las mejores promos</p>
+                </div>
+                <div class="image-container">
+                    <img src="./NOTICIAS/3.png" alt="Imagen 3">
+                    <p class="first-text">Consiendote A TI</p>
+                    <p class="second-text">Lo mejor para los mejores</p>
+                </div>
         </div>
     </section>
 

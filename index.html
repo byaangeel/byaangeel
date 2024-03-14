@@ -13,18 +13,16 @@
             padding: 0;
         }
         .main-header {
-        background-color: #ffffff;
-        color: #000000;
-        padding: 10px;
-        text-align: center;
-        position: fixed;
-        top: 0; /* Fija el encabezado en la parte superior de la ventana */
-        width: 100%; /* Ancho completo del encabezado */
-        z-index: 999; /* Asegura que el encabezado esté por encima de otros elementos */
-        font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
-         }
-
-        
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0; /* Fija el encabezado en la parte superior de la ventana */
+            width: 100%; /* Ancho completo del encabezado */
+            z-index: 999; /* Asegura que el encabezado esté por encima de otros elementos */
+            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+        }
         nav {
             background-color: #f4f4f4;
             padding: 10px;
@@ -34,7 +32,6 @@
             top: 60px; /* Ajusta esta línea según sea necesario */
             left: 10px;
             z-index: 1;
-            
         }
         nav ul {
             list-style-type: none;
@@ -55,7 +52,6 @@
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #ddd;
-            
         }
         nav ul li a img {
             max-width: 20px; /* Tamaño máximo de la imagen */
@@ -124,8 +120,6 @@
             padding: 10px 15px;
             border-radius: 15px;
             cursor: pointer;
-            
-           
         }
         .product-info button:hover {
             background-color: #eeb8e9f8;
@@ -133,7 +127,7 @@
         .search-section {
             text-align: center;
             margin-bottom: 20px;
-            margin-top: 30px
+            margin-top: 30px;
         }
         .search-section button {
             margin-right: 20px;
@@ -143,7 +137,6 @@
             padding: 15px 20px;
             border-radius: 15px;
             cursor: pointer;
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
         }
         .search-section button:hover {
             background-color: #eeb8e9f8;
@@ -198,148 +191,134 @@
             margin-right: 20px;
             padding: 10px;
             border-radius: 5px;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
+            border: 1px;
             transition: transform 0.3s ease-in-out;
         }
         .best-seller-item:hover {
             transform: scale(1.05);
         }
         .best-seller-item img {
-            max-width: 150px; /* Ajusta el tamaño máximo de las imágenes de los productos más vendidos */
+            max-width: 150px;
             height: auto;
-            margin-right: 1px; /* Espacio entre las imágenes */
-            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
-}
-        /* Estilo para la sección "Lo más vendido" */
-        .best-seller-section h2 {
-            font-family: 'Times New Roman', Times, serif; /* Cambia la tipografía */
-            text-align: center; /* Centra el texto */
-            color: #eeb8e9f8; /* Color rosa */
+            margin-right: 1px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
         }
-
-        /* Estilos para el nuevo footer */
+        .best-seller-section h2 {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color: #eeb8e9f8;
+        }
         footer {
             background-color: #fffffff8;
             color: #eeb8e9f8;
             padding: 20px;
             display: flex;
             justify-content: space-between;
-            
         }
-
         footer .contact-info,
         footer .social-media {
             flex-basis: 50%;
         }
-
         footer .contact-info img,
         footer .social-media img {
             max-width: 100px;
             margin-bottom: 10px;
         }
-
         footer .contact-info p,
         footer .social-media p {
             margin: 0;
             text-align: center;
         }
-
-        /* Estilo para los nombres de los productos más vendidos */
         .best-seller-item p {
-            font-family: 'Times New Roman', Times, serif; /* Cambia la tipografía */
-            color: #b88eb3f8; /* Color rosa */
+            font-family: 'Times New Roman', Times, serif;
+            color: #b88eb3f8;
         }
-         /* Estilos para las imágenes debajo del botón "VER CATÁLOGO" */
-         .horizontal-images {
+        .horizontal-images {
             display: flex;
             overflow-x: auto;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
             white-space: nowrap;
-            margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+            margin-top: 10px;
         }
-
         .horizontal-images img {
-            max-width: 250px; /* Ajusta el tamaño máximo de las imágenes según sea necesario */
+            max-width: 250px;
             height: auto;
-            margin-right: 10px; /* Espacio entre las imágenes */
-            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
         }
-
-        /* Agrega la animación al pasar el cursor sobre las imágenes */
         .horizontal-images img:hover {
-            transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+            transform: scale(1.05);
         }
-         .best-seller-item img {
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .best-seller-item:hover img {
-        transform: scale(1.1);
-    }
-    .button-text {
-    text-align: center;
-    margin-top: 30px; /* Ajusta el margen superior según sea necesario */
-    font-family: 'Times New Roman', Times, serif; /* Cambia la tipografía */
-    color: #000000f8; /* Color rosa */
-}
-.large-text {
-    font-size: 24px; /* Tamaño del texto, ajusta según sea necesario */
-}
-.image-container {
-    text-align: center; /* Centra el texto debajo de la imagen */
-    margin-right: 10px; /* Espacio entre las imágenes */
-    margin-bottom: 5px;
-}
-
-.image-container .first-text {
-    font-size: 23px;
-    color: rgb(0, 0, 0); /* Estilo para el primer texto */
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.image-container .second-text {
-    font-size: 14px;
-    color: rgb(0, 0, 0); /* Estilo para el segundo texto */
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: -12px;
-}
+        .best-seller-item img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .best-seller-item:hover img {
+            transform: scale(1.1);
+        }
+        .button-text {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #000000f8;
+        }
+        .large-text {
+            font-size: 24px;
+        }
+        .image-container {
+            text-align: center;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .image-container .first-text {
+            font-size: 23px;
+            color: rgb(0, 0, 0);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .image-container .second-text {
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: -12px;
+        }
     </style>
 </head>
 <body>
     <header class="main-header">
-        <img src="./GARGANTILLAS/logo3.png" height="50px" alt="Logo de la tienda">
+        <img src="logo3.png" height="50px" alt="Logo de la tienda">
     </header>
 
     <section class="news-section">
-        <img src="./GARGANTILLAS/noticia20.png"  alt="Noticias">
+        <img src="noticia20.png"  alt="Noticias">
     </section>
 
     <section class="best-seller-section">
         <h2>LO + VENDIDO</h2>
         <div class="best-seller-container" onmousedown="startDrag(event)" onmouseup="endDrag()">
             <div class="best-seller-item">
-                <img src="./VENDIDO/1.png" alt="Best Seller 1">
+                <img src="1.png" alt="Best Seller 1">
                 <p>Gargantillas Ojo Turco</p>
             </div>
             <div class="best-seller-item">
-                <img src="./VENDIDO/2.png" alt="Best Seller 2">
+                <img src="2.png" alt="Best Seller 2">
                 <p>Gagrgantillas Inicial Blancas</p>
             </div>
             <div class="best-seller-item">
-                <img src="./VENDIDO/3.png" alt="Best Seller 3">
+                <img src="3.png" alt="Best Seller 3">
                 <p>Gagrgantillas Inicial Negras</p>
             </div>
             <div class="best-seller-item">
-                <img src="./VENDIDO/4.png" alt="Best Seller 1">
+                <img src="4.png" alt="Best Seller 1">
                 <p>Anillos Ajustables</p>
             </div>
             <div class="best-seller-item">
-                <img src="./VENDIDO/5.png" alt="Best Seller 1">
+                <img src="5.png" alt="Best Seller 1">
                 <p>Pulseras Rolex Delgadas</p>
             </div>
             <div class="best-seller-item">
-                <img src="./VENDIDO/6.png" alt="Best Seller 1">
+                <img src="6.png" alt="Best Seller 1">
                 <p>Pulseras Rolex Gruesas</p>
             </div>
              <!-- Contenido de los productos más vendidos -->
@@ -356,17 +335,17 @@
             </div>
             <div class="horizontal-images">
                 <div class="image-container">
-                    <img src="./NOTICIAS/1.png" alt="Imagen 1">
+                    <img src="1.png" alt="Imagen 1">
                     <p class="first-text">Entregas Personales</p>
                     <p class="second-text">Tehuacán y sus alrededores</p>
                 </div>
                 <div class="image-container">
-                    <img src="./NOTICIAS/2.png" alt="Imagen 2">
+                    <img src="2.png" alt="Imagen 2">
                     <p class="first-text">Siempre Presentes en Expos</p>
                     <p class="second-text">Dando las mejores promos</p>
                 </div>
                 <div class="image-container">
-                    <img src="./NOTICIAS/3.png" alt="Imagen 3">
+                    <img src="3.png" alt="Imagen 3">
                     <p class="first-text">Consiendote A TI</p>
                     <p class="second-text">Lo mejor para los mejores</p>
                 </div>
@@ -376,11 +355,11 @@
     <!-- Nuevo footer al final de la página -->
     <footer>
         <div class="contact-info" style="text-align: center;">
-            <img src="./GARGANTILLAS/mexico.png" alt="Contacto">
+            <img src="mexico.png" alt="Contacto">
             <p>ENVIOS A TODO MEXICO</p>
         </div>
         <div class="social-media" style="text-align: center;">
-            <img src="./GARGANTILLAS/entregas.png" alt="Redes Sociales">
+            <img src="entregas.png" alt="Redes Sociales">
             <p>ENTREGAS SEGURAS</p>
         </div>
     </footer>

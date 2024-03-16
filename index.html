@@ -111,21 +111,7 @@
         .product-info p {
             color: #333; /* Color del precio */
         }
-        .product-info .colors {
-            display: none; /* Oculta la lista de colores inicialmente */
-            margin-top: 10px;
-        }
-        .product-info button {
-            background-color: #b88eb3f8;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 15px;
-            cursor: pointer;
-        }
-        .product-info button:hover {
-            background-color: #eeb8e9f8;
-        }
+        
         .search-section {
             text-align: center;
             margin-bottom: 20px;
@@ -133,25 +119,26 @@
         }
         .search-section button {
             margin-right: 25px;
-            background-color: #b88eb3f8;
-            color: #ffffff;
+            background-color: #fffffff8;
+            color: #000000;
             border: none;
             padding: 10px 25px;
             border-radius: 30px;
             cursor: pointer;
+            border: 2px solid black;
         }
         
         .search-section button:hover {
-            background-color: #eeb8e9f8;
+            background-color: #fffffff8;
         }
         .search-section .button-link {
-    display: inline-block;
-}
+            display: inline-block;
+        }
 
-.search-section .button-link button {
-    margin: 0 2px; /* Ajusta el margen horizontal entre botones */
-    padding: 10px 25px; /* Ajusta el padding para hacer los botones más grandes */
-}
+        .search-section .button-link button {
+            margin: 0 2px; /* Ajusta el margen horizontal entre botones */
+            padding: 10px 25px; /* Ajusta el padding para hacer los botones más grandes */
+        }
         .news-section {
             text-align: center;
             margin-bottom: 20px;
@@ -199,7 +186,7 @@
         }
         .best-seller-item {
             display: inline-block;
-            margin-right: 20px;
+            margin-right: 1px;
             padding: 10px;
             border-radius: 5px;
             background-color: #ffffff;
@@ -219,7 +206,7 @@
         .best-seller-section h2 {
             font-family: 'Times New Roman', Times, serif;
             text-align: center;
-            color: #eeb8e9f8;
+            color: #000000f8;
         }
         footer {
             background-color: #fffffff8;
@@ -244,7 +231,8 @@
         }
         .best-seller-item p {
             font-family: 'Times New Roman', Times, serif;
-            color: #b88eb3f8;
+            color: #000000f8;
+            text-align: center;
         }
         .horizontal-images {
             display: flex;
@@ -294,7 +282,39 @@
             font-family: 'Times New Roman', Times, serif;
             margin-top: -12px;
         }
-        
+        .additional-section {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 10px;
+}
+
+.additional-section img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.indicator-buttons {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.indicator-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: white;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator-button.active {
+    background-color: black;
+}
     </style>
 </head>
 <body>
@@ -307,7 +327,7 @@
     </section>
 
     <section class="best-seller-section">
-        <h2>LO + VENDIDO</h2>
+        <h2>BEST SELLERS</h2>
         <div class="best-seller-container" onmousedown="startDrag(event)" onmouseup="endDrag()">
             <div class="best-seller-item">
                 <img src="./VENDIDO/1.png" alt="Best Seller 1">
@@ -315,11 +335,11 @@
             </div>
             <div class="best-seller-item">
                 <img src="./VENDIDO/2.png" alt="Best Seller 2">
-                <p>Gagrgantillas Inicial Blancas</p>
+                <p>Inicial Blancas</p>
             </div>
             <div class="best-seller-item">
                 <img src="./VENDIDO/3.png" alt="Best Seller 3">
-                <p>Gagrgantillas Inicial Negras</p>
+                <p> Inicial Negras</p>
             </div>
             <div class="best-seller-item">
                 <img src="./VENDIDO/4.png" alt="Best Seller 1">

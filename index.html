@@ -52,6 +52,7 @@
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #ddd;
+            margin-right: 30px
         }
         nav ul li a img {
             max-width: 20px; /* Tamaño máximo de la imagen */
@@ -60,6 +61,7 @@
         nav ul li a:hover {
             background-color: #ccc;
         }
+        
         .products-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste del número de columnas y el ancho mínimo/máximo */
@@ -127,20 +129,29 @@
         .search-section {
             text-align: center;
             margin-bottom: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
         .search-section button {
-            margin-right: 20px;
+            margin-right: 25px;
             background-color: #b88eb3f8;
             color: #ffffff;
             border: none;
-            padding: 15px 20px;
-            border-radius: 15px;
+            padding: 10px 25px;
+            border-radius: 30px;
             cursor: pointer;
         }
+        
         .search-section button:hover {
             background-color: #eeb8e9f8;
         }
+        .search-section .button-link {
+    display: inline-block;
+}
+
+.search-section .button-link button {
+    margin: 0 2px; /* Ajusta el margen horizontal entre botones */
+    padding: 10px 25px; /* Ajusta el padding para hacer los botones más grandes */
+}
         .news-section {
             text-align: center;
             margin-bottom: 20px;
@@ -283,6 +294,7 @@
             font-family: 'Times New Roman', Times, serif;
             margin-top: -12px;
         }
+        
     </style>
 </head>
 <body>
@@ -327,10 +339,14 @@
  
     <section>
         <div class="search-section">
-            <a href="gargantillas.html" class="button-link">
-                <button onclick="showProducts('gargantillas.html')">VER CATÁLOGO</button>
-            </a>
-            <div class="button-text">
+            <a href="gargantillas.html" class="button-link"><button class="button-link" onclick="showProducts('gargantillas.html')">GARGANTILLAS</button></a>
+            <a href="anillos.html" class="button-link"><button class="button-link" onclick="showProducts('anillos.html')">ANILLOS</button></a>
+            <a href="cadenas.html" class="button-link"><button class="button-link" onclick="showProducts('cadenas.html')">CADENAS</button></a>
+            <a href="pulseras.html" class="button-link"><button class="button-link" onclick="showProducts('pulseras.html')">PULSERAS</button></a>
+            <a href="brazaletes.html" class="button-link"><button class="button-link" onclick="showProducts('brazaletes.html')">BRAZALETES</button></a>
+            <a href="joyeros.html" class="button-link"><button class="button-link" onclick="showProducts('joyeros.html')">JOYEROS</button></a>
+        </div>
+        <div class="button-text">
                 <p class="large-text">¡Vive la mejor experiencia de compra!😍</p>
             </div>
             <div class="horizontal-images">

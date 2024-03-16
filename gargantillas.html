@@ -48,14 +48,19 @@
             margin-top: 220px; /* Espacio entre el botón y el catálogo */
         }
         .product-card {
-            width: 200px; /* Ancho de cada tarjeta de producto */
+            width: 250px; /* Ancho de cada tarjeta de producto */
             margin: 10px;
             padding: 15px;
             border: 1px solid #ccc;
             border-radius: 10px;
             text-align: center;
             background-color: #ffffff; /* Fondo blanco */
+            
         }
+        .product-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el ratón */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
         .product-card img {
             max-width: 100%;
             height: auto;
@@ -84,6 +89,7 @@
             padding: 20px;
             border: 1px solid #888;
             width: 80%; /* 80% del ancho de la ventana */
+            border-radius: 20px;
         }
 
         /* Cerrar el botón */
@@ -112,7 +118,7 @@
         <a href="index.html" class="button-link">
             <button class="start-button" onclick="openModal('index.html')">INICIO</button>
         </a>
-        <p>GARGANTILLAS</p>
+        
     </div>
 
     </div>

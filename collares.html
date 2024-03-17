@@ -196,10 +196,26 @@ footer {
 
         /* Estilo para dispositivos móviles */
         @media only screen and (max-width: 768px) {
-            .product {
-                width: calc(50% - 20px); /* Establece el ancho del producto para mostrar dos por fila */
-            }
-        }
+    .product {
+        width: calc(45% - 20px); /* Aumenta el ancho del producto para que ocupe casi la mitad del ancho de la pantalla */
+        margin: 10px; /* Ajusta el espacio entre los productos */
+    }
+    
+    .product h2 {
+        font-size: 18px; /* Reduce el tamaño del título del producto */
+    }
+    
+    .product p {
+        font-size: 14px; /* Reduce el tamaño del texto de descripción */
+    }
+    
+    .container {
+        justify-content: center; /* Centra los productos en dispositivos móviles */
+    }
+}
+
+
+       
         
         
     </style>

@@ -193,6 +193,17 @@ footer {
             margin: 0;
             text-align: center;
         }
+        /* Estilos para productos agotados */
+        .product.out-of-stock {
+            opacity: 0.5; /* Reduce la opacidad del producto cuando está agotado */
+            pointer-events: none; /* Desactiva la interacción con el producto */
+        }
+
+        .product.out-of-stock .btn-modal {
+            background-color: #ccc; /* Cambia el color de fondo del botón cuando está agotado */
+            color: #666; /* Cambia el color del texto del botón cuando está agotado */
+            border-color: #ccc; /* Cambia el color del borde del botón cuando está agotado */
+        }
 
         /* Estilo para dispositivos móviles */
         @media only screen and (max-width: 768px) {
@@ -212,12 +223,7 @@ footer {
     .container {
         justify-content: center; /* Centra los productos en dispositivos móviles */
     }
-}
-
-
-       
-        
-        
+}   
     </style>
 </head>
 <body>
@@ -252,10 +258,11 @@ footer {
         </div>
         
          <!-- Producto 2 -->
-        <div class="product">
+         <div class="product out-of-stock">
             <img src="./GARGANTILLAS/2.png" alt="Anillo 2">
-            <h2>Anillo 2</h2> <p>Precio: $XX.XX</p>
-            <button class="btn-modal btn" data-stock="out-of-stock" disabled>Agotado</button> <!-- Cambiamos el estilo del botón -->
+            <h2>Anillo 2</h2>
+            <p>Precio: $XX.XX</p>
+            <button class="btn-modal btn" disabled>Agotado</button>
             <div class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>

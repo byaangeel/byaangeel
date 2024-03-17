@@ -223,7 +223,28 @@ footer {
     .container {
         justify-content: center; /* Centra los productos en dispositivos móviles */
     }
-}   
+} 
+.new-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1;
+    display: inline-block; /* Para que ocupe solo el espacio necesario */
+    opacity: 0.8; /* Ajusta la opacidad según sea necesario */
+}
+
+.new-product {
+    position: relative;
+    /* Agrega espacio adicional en la parte superior para acomodar la etiqueta "Nuevo" */
+    margin-top: 25px;
+}
+
+
     </style>
 </head>
 <body>
@@ -257,7 +278,7 @@ footer {
             </div>
         </div>
         
-         <!-- Producto 2 -->
+         <!-- Producto 2 AGOTADO -->
          <div class="product out-of-stock">
             <img src="./GARGANTILLAS/2.png" alt="Anillo 2">
             <h2>Anillo 2</h2>
@@ -275,6 +296,26 @@ footer {
                 </div>
             </div>
         </div>
+        <!-- Producto 3 (NUEVO) -->
+<div class="product new-product">
+    <span class="new-label">Nuevo</span>
+    <img src="./GARGANTILLAS/3.png" alt="Anillo 3">
+    <h2>Anillo 3</h2>
+    <p>Precio: $XX.XX</p>
+    <button class="btn-modal btn">Ver Disponibles</button>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>DISPONIBLES</h2>
+            <ul>
+                <li>Modelo M para Anillo 3</li>
+                <li>Modelo N para Anillo 3</li>
+                <li>Modelo O para Anillo 3</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
         <!-- Agregar más productos aquí -->
 

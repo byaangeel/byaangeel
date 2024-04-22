@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BY AANGEEL</title>
+    <title>by aangeel</title>
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> <!-- Swiper CSS -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,13 +16,12 @@
         .main-header {
             background-color: #ffffff;
             color: #000000;
-            
             text-align: center;
             position: fixed;
-            top: 0; /* Fija el encabezado en la parte superior de la ventana */
-            width: 100%; /* Ancho completo del encabezado */
-            z-index: 999; /* Asegura que el encabezado esté por encima de otros elementos */
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            font-family: 'Times New Roman', Times, serif;
         }
         nav {
             background-color: #f4f4f4;
@@ -29,7 +29,7 @@
             text-align: left;
             display: none;
             position: absolute;
-            top: 60px; /* Ajusta esta línea según sea necesario */
+            top: 60px;
             left: 10px;
             z-index: 1;
         }
@@ -39,8 +39,8 @@
             margin: 0;
         }
         nav ul li {
-            display: inline-block; /* Cambio para que los elementos se muestren en línea */
-            margin-right: 10px; /* Espacio entre los elementos */
+            display: inline-block;
+            margin-right: 10px;
         }
         nav ul li a {
             color: #333;
@@ -48,15 +48,15 @@
             font-weight: bold;
             font-size: 18px;
             display: flex;
-            align-items: center; /* Centra verticalmente el texto e icono */
+            align-items: center;
             padding: 10px 20px;
             border-radius: 5px;
             background-color: #ddd;
             margin-right: 30px
         }
         nav ul li a img {
-            max-width: 20px; /* Tamaño máximo de la imagen */
-            margin-right: 5px; /* Espacio entre la imagen y el texto */
+            max-width: 20px;
+            margin-right: 5px;
         }
         nav ul li a:hover {
             background-color: #ccc;
@@ -64,21 +64,21 @@
         
         .products-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste del número de columnas y el ancho mínimo/máximo */
-            grid-gap: 20px; /* Espacio entre las columnas */
-            padding: 20px; /* Ajuste del espacio interior */
-            overflow-x: auto; /* Activar desplazamiento horizontal */
-            white-space: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
-            scroll-behavior: smooth; /* Activar desplazamiento suave */
-            -webkit-overflow-scrolling: touch; /* Activar desplazamiento suave en dispositivos iOS */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
         .product {
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 10px;
-            display: inline-block; /* Ajuste para permitir el desplazamiento horizontal */
-            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
-            position: relative; /* Agregar posición relativa para el sombreado */
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
         }
         .product::after {
             content: '';
@@ -86,13 +86,13 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 10px; /* Altura de la sombra */
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%); /* Degradado para la sombra */
+            height: 10px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
         .product:hover {
-            transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el ratón */
+            transform: scale(1.05);
         }
         .product img {
             max-width: 100%;
@@ -100,16 +100,16 @@
         }
         .product-info .discount-label {
             position: absolute;
-            top: -20px; /* Posición del texto encima del precio */
-            left: 10px; /* Ajusta esta línea para el espaciado izquierdo */
+            top: -20px;
+            left: 10px;
             background-color: #eeb8e9f8;
             color: #fff;
             padding: 5px 10px;
             border-radius: 15px;
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
+            font-family: 'Times New Roman', Times, serif;
         }
         .product-info p {
-            color: #333; /* Color del precio */
+            color: #333;
         }
         
         .search-section {
@@ -137,8 +137,8 @@
         }
 
         .search-section .button-link button {
-            margin: 0 2px; /* Ajusta el margen horizontal entre botones */
-            padding: 10px 25px; /* Ajusta el padding para hacer los botones más grandes */
+            margin: 0 10px 10px 0;
+            padding: 10px 25px;
         }
         .news-section {
             text-align: center;
@@ -211,7 +211,7 @@
         }
         footer {
             background-color: #fffffff8;
-            color: #eeb8e9f8;
+            color: #000000f8;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -284,38 +284,74 @@
             margin-top: -12px;
         }
         .additional-section {
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    margin-top: 10px;
-}
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 10px;
+        }
 
-.additional-section img {
-    max-width: 100%;
-    height: auto;
-    margin-right: 10px;
-    transition: transform 0.3s ease-in-out;
-}
+        .additional-section img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.indicator-buttons {
-    margin-top: 10px;
-    text-align: center;
-}
+        .indicator-buttons {
+            margin-top: 10px;
+            text-align: center;
+        }
 
-.indicator-button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 1px solid black;
-    background-color: white;
-    margin: 0 5px;
-    cursor: pointer;
-}
+        .indicator-button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid black;
+            background-color: white;
+            margin: 0 5px;
+            cursor: pointer;
+        }
 
-.indicator-button.active {
-    background-color: black;
-}
+        .indicator-button.active {
+            background-color: black;
+        }
+        .slider-controls {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .slider-controls button {
+        font-size: 24px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        color: #555; /* Color de los botones por defecto */
+    }
+
+    .slider-controls button:hover {
+        color: #000; /* Cambiar el color al pasar el cursor sobre los botones */
+    }
+
+    .slider-controls button:focus {
+        outline: none; /* Quitar el contorno al enfocar el botón */
+    }
+
+    .slider-controls button.swiper-button-disabled {
+        opacity: 0.5; /* Reducir la opacidad de los botones deshabilitados */
+        cursor: not-allowed; /* Cambiar el cursor para indicar que el botón está deshabilitado */
+    }
+
+    /* Estilo para el botón de avance */
+    .swiper-button-next {
+        margin-left: 10px; /* Ajustar el espaciado entre los botones */
+    }
+
+    /* Estilo para el botón de retroceso */
+    .swiper-button-prev {
+        margin-right: 10px; /* Ajustar el espaciado entre los botones */
+    }
     </style>
 </head>
 <body>
@@ -324,7 +360,26 @@
     </header>
 
     <section class="news-section">
-        <img src="./INICIO/noticia20.png"  alt="Noticias">
+        <!-- Contenido del slider -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./SLIDER/1.png" alt="Noticia 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./SLIDER/2.png" alt="Noticia 2">
+                </div>
+                <!-- Agrega más noticias como sea necesario -->
+            </div>
+            <!-- Si deseas agregar paginación -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- Fin del contenido del slider -->
+        <!-- Botones de control del slider -->
+        <div class="slider-controls">
+            <button onclick="prevSlide()">&#10094;</button>
+            <button onclick="nextSlide()">&#10095;</button>
+        </div>
     </section>
 
     <section class="best-seller-section">
@@ -357,10 +412,15 @@
              <!-- Contenido de los productos más vendidos -->
         </div>
     </section>
+    <div class="button-text">
+        <p class="large-text">CATALOGO❤️</p>
+    </div>
  
     <section>
         <div class="search-section">
             <a href="collares.html" class="button-link"><button class="button-link" onclick="showProducts('collares.html')">COLLARES</button></a>
+            <a href="aretes.html" class="button-link"><button class="button-link" onclick="showProducts('aretes.html')">ARETES</button></a>
+            <a href="conjuntos.html" class="button-link"><button class="button-link" onclick="showProducts('conjuntos.html')">CONJUNTOS</button></a>
             <a href="anillos.html" class="button-link"><button class="button-link" onclick="showProducts('anillos.html')">ANILLOS</button></a>
             <a href="cadenas.html" class="button-link"><button class="button-link" onclick="showProducts('cadenas.html')">CADENAS</button></a>
             <a href="pulseras.html" class="button-link"><button class="button-link" onclick="showProducts('pulseras.html')">PULSERAS</button></a>
@@ -392,15 +452,39 @@
     <!-- Nuevo footer al final de la página -->
     <footer>
         <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/mexico.png" alt="Contacto">
-            <p>ENVIOS A TODO MEXICO</p>
+            <img src="./INICIO/captura.png" alt="Contacto">
+            <p>ENVIANOS CAPTURA DEL PRODUCTO
+                A NUESTRO INSTAGRAM</p>
         </div>
         <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entregas.png" alt="Redes Sociales">
-            <p>ENTREGAS SEGURAS</p>
+            <img src="./INICIO/entreper.png" alt="Redes Sociales">
+            <p>REENTREGAS PERSONALES SEGURAS</p>
         </div>
         
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> <!-- Swiper JS -->
+    <script>
+        // Inicialización de Swiper
+        var swiper = new Swiper('.swiper-container', {
+            loop: true, // Hacer el slider infinito
+            autoplay: {
+                delay: 5000, // Cambiar de slide cada 5 segundos
+            },
+            pagination: {
+                el: '.swiper-pagination', // Agregar paginación
+            },
+        });
+        // Funciones para avanzar y retroceder el slider
+        function nextSlide() {
+            swiper.slideNext();
+        }
+
+        function prevSlide() {
+            swiper.slidePrev();
+        }
+    </script>
 </body>
 </html>
 

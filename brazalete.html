@@ -52,42 +52,35 @@
         }
 
         .product {
-            font-family: 'Times New Roman', Times, serif;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 450px;
-            
-            margin-left: auto;
-            margin-right: auto;
-            width: calc(20% - 20px);
-            margin: 5px;
-            position: relative;
+           background-color: #ffffff;
+           border-radius: 10px;
+           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+           margin-bottom: 20px;
+           overflow: hidden;
+           transition: transform 0.3s ease-in-out;
+           width: 250px; /* Ajusta el ancho según sea necesario */
         }
+
         .product:hover {
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
+           transform: translateY(-5px);
         }
 
         .product img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
+           width: 100%;
+           border-top-left-radius: 10px;
+           border-top-right-radius: 10px;
         }
 
-        .product h2 {
+        .product .details {
+            padding: 15px;
+        }
+
+        .product h2, .product p {
             margin-top: 10px;
-            font-size: 20px;
-        }
-
-        .product p {
-            font-size: 14px;
-            margin-top: 1px;
-            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            color: #000000;
+            text-align: center; 
+            font-weight: bold;
         }
 
         .btn {
@@ -197,40 +190,98 @@
             <div class="subtext">Brazaletes excepcionales para un estilo inigualable.</div>
         </div>
 
-        <!-- Producto 1 -->
+        <!-- Producto  -->
         <div class="product" data-product="1">
-            <img src="./ANILLOS/1.png" alt="ANILLOS 1">
-            <h2>Anillos Diseño</h2>
-            <p>$149.00 MXN</p>
+            <img src="./BRAZALETES/1.png" alt="ANILLOS 1">
+            <h2>Brazalete Clavo</h2>
+            <p>$229 MXN</p>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/2.png" alt="ANILLOS 1">
+            <h2>Brazalete diseño</h2>
+            <p>$239 MXN</p>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/3.png" alt="ANILLOS 1">
+            <h2>Brazalete Diseño</h2>
+            <p>$219 MXN</p>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/4.png" alt="ANILLOS 1">
+            <h2>Brazalete Tiffany</h2>
+            <p>$219 MXN</p>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/5.png" alt="ANILLOS 1">
+            <h2>Brazalete Doble</h2>
+            <p>$219 MXN</p>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/6.png" alt="ANILLOS 1">
+            <h2>Brazalete Diseño</h2>
+            <p>$229 MXN</p>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/7.png" alt="ANILLOS 1">
+            <h2>Brazalete Cartier </h2>
+            <p>$219 MXN</p>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/8.png" alt="ANILLOS 1">
+            <h2>Brazalete Cartier (grueso)</h2>
+            <p>$239 MXN</p>
             <!-- Aquí solía estar el botón para ver los modelos -->
         </div>
 
-        <!-- Producto Agotado -->
-        <div class="product out-of-stock">
-            <img src="./ANILLOS/2.png" alt="ANILLOS Agotado">
-            <h2>Anillo Agotado</h2>
-            <p>Agotado</p>
+         <!-- Producto Agotado -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/9.png" alt="ANILLOS Agotado">
+            <h2>Brazalete Liso</h2>
+            <p>$129 MXN</p>
         </div>
 
         <!-- Producto Nuevo -->
         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/3.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Nuevo</h2>
-            <p>$199.00 MXN</p>
+            <img src="./BRAZALETES/10.png" alt="ANILLOS Nuevo">
+            <h2>Brazalete tipo Bulgari</h2>
+            <p>$219 MXN</p>
             <div class="new-label">Nuevo</div>
+            <!-- Aquí solía estar el botón para ver los modelos -->
+        </div>
+        <!-- Producto  -->
+        <div class="product" data-product="1">
+            <img src="./BRAZALETES/11.png" alt="ANILLOS 1">
+            <h2>Brazalete Baguette </h2>
+            <p>$239 MXN</p>
             <!-- Aquí solía estar el botón para ver los modelos -->
         </div>
     </div>
 
     <footer>
         <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/mexico.png" alt="Contacto">
-            <p>ENVIOS A TODO MEXICO</p>
+            <img src="./INICIO/captura.png" alt="Contacto">
+            <p>ENVIANOS CAPTURA DEL PRODUCTO
+                A NUESTRO INSTAGRAM</p>
         </div>
         <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entregas.png" alt="Redes Sociales">
-            <p>ENTREGAS SEGURAS</p>
+            <img src="./INICIO/entreper.png" alt="Redes Sociales">
+            <p>ENTREGAS PERSONALES SEGURAS</p>
         </div>
+        
     </footer>
 
 </body>

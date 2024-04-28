@@ -195,7 +195,7 @@
             <img src="./INICIO/JOYERO PAG WEB.png" alt="ANILLOS 1">
             <h2>Joyero individual </h2>
             <p>$129 MXN</p>
-            
+            <a href="https://www.instagram.com/direct/new/?user=by.aangeel" class="btn">Hacer Pedido</a>            
         </div>
 
         <!-- Producto Agotado 
@@ -214,6 +214,21 @@
             
         </div>  -->
     </div>
+    <script>
+        function enviarMensajeDirecto(producto, precio) {
+            // Construye el mensaje con los datos del producto
+            const mensaje = `¡Hola! Estoy interesado en este producto:\n\n${producto}\nPrecio: ${precio}\n\n¿Cómo puedo proceder con la compra?`;
+
+            // Codifica el mensaje para asegurar que los caracteres especiales sean manejados correctamente
+            const mensajeCodificado = encodeURIComponent(mensaje);
+
+            // URL de Instagram con el mensaje predefinido
+            const urlInstagram = `https://www.instagram.com/direct/new/?user=by.aangeel&text=${mensajeCodificado}`;
+
+            // Redirige al usuario a Instagram con el mensaje predefinido
+            window.location.href = urlInstagram;
+        }
+    </script>
 
     <footer>
         <div class="contact-info" style="text-align: center;">
@@ -227,6 +242,7 @@
         </div>
         
     </footer>
+    
 
 </body>
 </html>

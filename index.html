@@ -324,6 +324,19 @@
 .indicator-button.active {
     background-color: black;
 }
+/* Desactivar el desplazamiento horizontal en dispositivos móviles */
+.swiper-container {
+        overflow-x: hidden;
+    }
+    /* Ajustar el ancho máximo del contenedor del slider */
+    .swiper-container .swiper-wrapper {
+        max-width: 100%;
+    }
+    /* Ajustar el ancho máximo de las imágenes del slider */
+    .swiper-container img {
+        max-width: 100%;
+        height: auto;
+    }
     </style>
 </head>
 <body>

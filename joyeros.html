@@ -228,18 +228,18 @@
     </footer>
     <script>
         function enviarMensajeWhatsApp(producto, precio) {
-            // Construye el mensaje con los datos del producto
-            const mensaje = `¡Hola! Estoy interesado en este producto: ${producto}, Precio: ${precio}. ¿Cómo puedo proceder con la compra?`;
+    // Construye el mensaje con los datos del producto
+    const mensaje = `¡Hola! Estoy interesado en este producto: ${producto}, Precio: ${precio}. ¿Cómo puedo proceder con la compra?`;
 
-            // Codifica el mensaje para asegurar que los caracteres especiales sean manejados correctamente
-            const mensajeCodificado = encodeURIComponent(mensaje);
+    // Codifica el mensaje para asegurar que los caracteres especiales sean manejados correctamente
+    const mensajeCodificado = encodeURI(mensaje);
 
-            // URL de WhatsApp con el mensaje predefinido
-            const urlWhatsApp = `https://wa.me/522382083779`;
+    // URL de WhatsApp con el mensaje predefinido
+    const urlWhatsApp = `https://wa.me/522382083779?text=${mensajeCodificado}`;
 
-            // Redirige al usuario a WhatsApp con el mensaje predefinido
-            window.location.href = urlWhatsApp;
-        }
+    // Redirige al usuario a WhatsApp con el mensaje predefinido
+    window.location.href = urlWhatsApp;
+}
     </script>
 </body>
 </html>

@@ -342,6 +342,9 @@
                     <img src="./SLIDER/2.png" alt="Noticia 2">
                 </div>
             </div>
+            <!-- Agrega los controles de navegación -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </section>
 
@@ -413,7 +416,7 @@
     </section>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // Inicializar Swiper
+        // Inicializar Swiper para el slider de noticias
         var swiper = new Swiper(".swiper-container", {
             loop: true, // Repetir el slider al llegar al final
             autoplay: {
@@ -422,6 +425,10 @@
             pagination: {
                 el: ".swiper-pagination", // Selector del contenedor de paginación
                 clickable: true, // Permitir hacer clic en los puntos de paginación para navegar
+            },
+            navigation: {
+                nextEl: ".swiper-button-next", // Selector del botón de siguiente
+                prevEl: ".swiper-button-prev", // Selector del botón de anterior
             },
         });
     </script>

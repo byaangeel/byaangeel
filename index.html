@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BY AANGEEL</title>
-   
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
     <style>
         body {
@@ -180,10 +180,18 @@
             cursor: pointer;
         }
         .best-seller-container {
-            overflow-x: auto;
-            white-space: nowrap;
-            cursor: grab;
-            user-select: none;
+           display: flex; 
+           gap: 20px;
+           cursor: grab; 
+          user-select: none; 
+        }
+        .best-seller-section {
+          overflow-x: auto; 
+          white-space: nowrap;
+          scroll-behavior: smooth; 
+          -webkit-overflow-scrolling: touch; 
+          margin-top: 10px; 
+          padding: 20px; 
         }
         .best-seller-item {
             display: inline-block;
@@ -324,7 +332,18 @@
     </header>
 
     <section class="news-section">
-        <img src="./SLIDER/1.png"  alt="Noticias">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./SLIDER/1.png" alt="Noticia 1">
+                </div>
+                <!-- Agrega más diapositivas según sea necesario -->
+                <div class="swiper-slide">
+                    <img src="./SLIDER/2.png" alt="Noticia 2">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
     </section>
 
     <section class="best-seller-section">
@@ -393,7 +412,20 @@
                 </div>
         </div>
     </section>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializar Swiper
+        var swiper = new Swiper(".swiper-container", {
+            loop: true, // Repetir el slider al llegar al final
+            autoplay: {
+                delay: 5000, // Intervalo de cambio de diapositivas (en milisegundos)
+            },
+            pagination: {
+                el: ".swiper-pagination", // Selector del contenedor de paginación
+                clickable: true, // Permitir hacer clic en los puntos de paginación para navegar
+            },
+        });
+    </script>
     <!-- Nuevo footer al final de la página -->
     <footer>
         <div class="contact-info" style="text-align: center;">

@@ -180,11 +180,16 @@
             cursor: pointer;
         }
         .best-seller-container {
-           display: flex; 
-           gap: 20px;
-           cursor: grab; 
-          user-select: none; 
-        }
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+.best-seller-container h2 {
+    margin-bottom: 20px; /* Ajusta el margen inferior del encabezado según sea necesario */
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000f8;
+    text-align: center;
+}
+
         .best-seller-section {
           overflow-x: auto; 
           white-space: nowrap;
@@ -355,15 +360,12 @@
                     <img src="./SLIDER/2.png" alt="Noticia 2">
                 </div>
             </div>
-            <!-- Agrega los controles de navegación -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </div>
     </section>
 
-    <section class="best-seller-section">
+    <section class="best-seller-container">
         <h2>BEST SELLERS 🔥</h2>
-        <div class="best-seller-container" onmousedown="startDrag(event)" onmouseup="endDrag()">
+        <div class="best-seller-section">
             <div class="best-seller-item">
                 <img src="./VENDIDO/1.png" alt="Best Seller 1">
                 <p>Gargantillas Ojo Turco</p>
@@ -438,10 +440,6 @@
             pagination: {
                 el: ".swiper-pagination", // Selector del contenedor de paginación
                 clickable: true, // Permitir hacer clic en los puntos de paginación para navegar
-            },
-            navigation: {
-                nextEl: ".swiper-button-next", // Selector del botón de siguiente
-                prevEl: ".swiper-button-prev", // Selector del botón de anterior
             },
         });
     </script>

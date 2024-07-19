@@ -3,535 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANILLOS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #ffffff;
-            color: #000000;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 60px auto 20px;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .category {
-            font-size: 24px;
-            margin-top: 10px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #333333;
-        }
-
-        .subtext {
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #666666;
-        }
-
-        .product {
-           background-color: #ffffff;
-           border-radius: 10px;
-           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-           margin-bottom: 20px;
-           overflow: hidden;
-           transition: transform 0.3s ease-in-out;
-           width: 250px; /* Ajusta el ancho según sea necesario */
-        }
-
-        .product:hover {
-           transform: translateY(-5px);
-        }
-
-        .product img {
-           width: 100%;
-           border-top-left-radius: 10px;
-           border-top-right-radius: 10px;
-        }
-
-        .product .details {
-            padding: 15px;
-        }
-
-        .product h2, .product p {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #000000;
-            text-align: center; 
-            font-weight: bold;
-        }
-        .product .description {
-            font-size: 16px;
-            color: #666666;
-            text-align: center;
-        }
-
-        .btn {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border: 2px solid #000000;
-            cursor: pointer;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .btn:hover {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        footer {
-            background-color: #fffffff8;
-            color: #000000f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        footer .contact-info,
-        footer .social-media {
-            flex-basis: 50%;
-        }
-
-        footer .contact-info img,
-        footer .social-media img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-
-        footer .contact-info p,
-        footer .social-media p {
-            margin: 0;
-            text-align: center;
-        }
-
-        .product.out-of-stock {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .product.out-of-stock .btn-modal {
-            background-color: #ccc;
-            color: #666;
-            border-color: #ccc;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .product {
-                width: calc(100% - 20px);
-                margin: 10px;
-            }
-
-            .product h2 {
-                font-size: 18px;
-            }
-
-            .product p {
-                font-size: 14px;
-            }
-
-            .container {
-                justify-content: center;
-            }
-        }
-
-        .new-label {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 23px;
-            font-weight: bold;
-            z-index: 1;
-            display: inline-block;
-            opacity: 0.8;
-        }
-
-        .new-product {
-            position: relative;
-        }
-    </style>
+    <title>Anillos - Joyería by.aangeel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productos.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="./INICIO/byaangeel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
-    <header>
-        <img src="./INICIO/logo3.png" height="40px" alt="Logo de la tienda">
-    </header>
+    <!-- Menú desplegable -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="collares.html">Collares</a>
+        <a href="cadenas.html">Cadenas</a>
+        <a href="pulseras.html">Pulseras</a>
+        <a href="brazaletes.html">Brazaletes</a>
+        <a href="aretes.html">Aretes</a>
+        <a href="conjuntos.html">Conjuntos</a>
+        <a href="anillos.html">Anillos</a>
+        <a href="joyeros.html">Joyeros</a>
+    </div>
 
-    <div class="container">
-        <div style="text-align: left;">
-            <a href="index.html" class="btn">Inicio</a>
-            <div class="category">Anillos</div>
-            <div class="subtext">Elige el anillo perfecto para el momento perfecto 😍</div>
+    <!-- Header -->
+    <div class="header-image">
+        <img src="./HEADER/Headeranillos.png" alt="Imagen de cabecera" loading="lazy">
+        <div class="curvatura"></div>
+        <div class="logo-container">
+            <img src="./INICIO/byaangeel.png" alt="Imagen circular" loading="lazy">
         </div>
+        <div class="nombre-joyeria">BY AANGEEL</div>
+    </div>
 
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/carita.png" alt="ANILLOS 1">
-            <h2>Anillo Carita</h2>
-            <p>$119 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/plca estrella.png" alt="ANILLOS 1">
-            <h2>Anillos Placa con estrella</h2>
-            <p>$119 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/pantera doble.png" alt="ANILLOS 1">
-            <h2>Anillos Pantera Doble</h2>
-            <p>$129 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/estetocopio.png" alt="ANILLOS 1">
-            <h2>Anillo Estetoscopio</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/corazon luna.png" alt="ANILLOS 1">
-            <h2>Anillo Corazon con Luna</h2>
-            <p>$129 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/doble D.png" alt="ANILLOS 1">
-            <h2>Anillo Doble D</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/estillo cadena.png" alt="ANILLOS 1">
-            <h2>Anillo Estilo Cadena</h2>
-            <p>$119 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/anzuelo.png" alt="ANILLOS 1">
-            <h2>Anillo Anzuelo</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/flecha roja.png" alt="ANILLOS 1">
-            <h2>Anillo Flecha</h2>
-            <p>$139 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/solitario.png" alt="ANILLOS 1">
-            <h2>Anillo Solitario</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/trenzado.png" alt="ANILLOS 1">
-            <h2>Anillo Trenzado</h2>
-            <p>$139 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/churrmbella V.png" alt="ANILLOS 1">
-            <h2>Anillo Churumbella en V</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/trenzado delgado.png" alt="ANILLOS 1">
-            <h2>Anillo Trenzado Delgado</h2>
-            <p>$99 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/caritas.png" alt="ANILLOS 1">
-            <h2>Anillo Caritas</h2>
-            <p>$109 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/H grande.png" alt="ANILLOS 1">
-            <h2>Anillo Hermes </h2>
-            <p>$159 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/forma corazon.png" alt="ANILLOS 1">
-            <h2>Anillo en Forma de Corazón</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/nudo.png" alt="ANILLOS 1">
-            <h2>Anillo Nudo Doble</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/ositos.png" alt="ANILLOS 1">
-            <h2>Anillos de Ositos</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/corazon verde y rojo.png" alt="ANILLOS 1">
-            <h2>Anillo Corazón Verde y Rojo</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/hermes.png" alt="ANILLOS 1">
-            <h2>Anillos Hermes</h2>
-            <p>$139 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/placa caballero.png" alt="ANILLOS 1">
-            <h2>Anillos Placa (caballero)</h2>
-            <p>$219 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/rolex modelo A.png" alt="ANILLOS 1">
-            <h2>Anillo Rolex (Modelo I)</h2>
-            <p>$219 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/Rolex modelo B.png" alt="ANILLOS 1">
-            <h2>Anillo Rolex (Modelo II)</h2>
-            <p>$219 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/rolex modeloB.png" alt="ANILLOS 1">
-            <h2>Anillo Rolex Plata (Modelo II)</h2>
-            <p>$219 MXN</p>
-            <div class="new-label">Nuevo</div> 
-        </div>
-        <!-- Producto  -->
-        <div class="product" data-product="1">
-            <img src="./ANILLOS/panteras.png" alt="ANILLOS 1">
-            <h2>Anillos Pantera </h2>
-            <p>$169 MXN</p>
-            
-        </div>
-        <!-- Producto Agotado 
-        <div class="product out-of-stock">
-            <img src="./ANILLOS/2.png" alt="ANILLOS Agotado">
-            <h2>Anillo Agotado</h2>
-            <p>Agotado</p>
-        </div> -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-item">Inicio</a>
+        <span class="breadcrumb-divider">/</span>
+        <span class="breadcrumb-item">Anillos</span>
+    </div>
 
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/corazones.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Corazón ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/panteras2.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Pantera ajustable</h2>
-            <p> $179 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/carita osito.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Osito  ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/trenzado byn.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Cruzado ajustable</h2>
-            <p> $139 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/anillo doble.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Doble ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/corazon plata.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Corazón Plata ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/solitario orombo.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Solitario Plata  ajustable</h2>
-            <p> $139 MXN</p> 
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/conejito.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Conejito  ajustable</h2>
-            <p> $139 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/gota azul.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Gota Azul ajustable</h2>
-            <p> $149 MXN</p> 
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/trenzado plata .png" alt="ANILLOS Nuevo">
-            <h2>Anillo Trenzado Plata  ajustable</h2>
-            <p> $149 MXN</p> 
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/perrito.png" alt="ANILLOS Nuevo">
-            <h2>Anillo de Perrito ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/D cruzado.png" alt="ANILLOS Nuevo">
-            <h2>Anillo D Cruzado ajustable</h2>
-            <p> $149 MXN</p> 
-        </div>
-         <!-- Producto Nuevo -->
-         <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/baguette .png" alt="ANILLOS Nuevo">
-            <h2>Anillo Baguette ajustable</h2>
-            <p> $159 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/conejo gde.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Conejito ajustable</h2>
-            <p> $159 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/solitario tranzado.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Solitario Trenzado ajustable</h2>
-            <p> $159 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/Corazones Grandes .png" alt="ANILLOS Nuevo">
-            <h2>Anillo Corazones Grandes ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/abejita.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Abejita ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/corazon rosa.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Corazón Rosa ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/gota blanca.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Gota ajustable</h2>
-            <p> $149 MXN</p> 
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/churumbella rojo.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Churumbella ajustable</h2>
-            <p> $149 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/cartier grueso.png" alt="ANILLOS Nuevo">
-            <h2>Anillo CARTIER (GRUESO)</h2>
-            <p class="description">DORADO #6, PLATA #6, ROSA#6 </p>
-            <p> $139 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/cartier delgado.png" alt="ANILLOS Nuevo">
-            <h2>Anillo CARTIER (DELGADO)</h2>
-            <p class="description">DORADO #6,8,9</p>
-            <p class="description">PLATA #7,8,9</p>
-            <p class="description">ROSA #8</p>
-            <p> $129 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ANILLOS/corazon chico.png" alt="ANILLOS Nuevo">
-            <h2>Anillo Corazón Chico ajustable</h2>
-            <p> $139 MXN</p>
+    <!-- Sección de productos -->
+    <div class="productos-container">
+        <h2 class="titulo-seccion">Anillos</h2>
+        <p class="descripcion-seccion">Elige el anillo perfecto para el momento perfecto 😍</p>
+        <div class="productos-grid">
+            <!-- Ejemplo de producto -->
+            <div class="producto-item">
+                <img src="./ANILLOS/perrito dorado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Perrito Dorado</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/perrito plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Perrito Plata</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/estilocadenaplata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Estilo Cadena Plata</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/ondas con perlas plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Ondas con Perlas plata</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/carita.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Carita</h3>
+                    <p class="producto-precio">$119 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/placa con estrella.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Placa con Estrella</h3>
+                    <p class="producto-precio">$119MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/pantera doble.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Pantera Doble</h3>
+                    <p class="producto-precio">$129 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/estetoscopio plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Estetoscopio plata</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/corazonn con luna.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Corazón con Luna </h3>
+                    <p class="producto-precio">$129 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/doble D.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Doble D </h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/estilo cadena dorado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Estilo Cadena dorado</h3>
+                    <p class="producto-precio">$119 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/anzuelo.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Anzuelo</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/flecha.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Flecha</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/trenzdo X.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Trenzado X</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/churumbella en V.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Churumbella en V</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/trenzado delgado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Trenzado Delgado </h3>
+                    <p class="producto-precio">$99 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/caritas.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Caritas</h3>
+                    <p class="producto-precio">$99 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/hermes gde.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Hermes GDE</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/forma de corazon.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo en Forma de Corazón</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/oso dorado y plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Osito </h3>
+                    <p class="producto-descripcion">Disponible: Plata y Dorado</p>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/corazon verde y rojo.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Corazón</h3>
+                    <p class="producto-descripcion">Disponible: Rojo y verde</p>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/hermes plata y dorado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Hermes</h3>
+                    <p class="producto-descripcion">Disponible: Dorado y Plata</p>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/placa caballero.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo de Caballero</h3>
+                    <p class="producto-descripcion">Disponible: Plata, Dorado y Negro </p>
+                    <p class="producto-precio">$219 c/u MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/rolex modelo I dorado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Rolex Dorado (Modelo I)</h3>
+                    <p class="producto-precio">$219 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/rolex modelo ll dorado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Rolex Dorado (Modelo II)</h3>
+                    <p class="producto-precio">$219 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/rolex plata modelo ll.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Rolex Plata (Modelo II)</h3>
+                    <p class="producto-precio">$219 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/pantera ch.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Pantera CH</h3>
+                    <p class="producto-descripcion">Disponible: Dorado</p>
+                    <p class="producto-precio">$169MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/corazon baguette plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Corazón Baguette</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/pantera gde.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Pantera GDE</h3>
+                    <p class="producto-descripcion">Disponible: Dorado</p>
+                    <p class="producto-precio">$179 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/carita de osito.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Carita de Osito</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/curazado blanco y negro.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Cruzado</h3>
+                    <p class="producto-descripcion">Disponible: Blanco y Negro</p>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/corazon con alas plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Corazón con Alas</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/conejito ch.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Conejito CH</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/trenzado con perlas plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Trenzado con Perlas</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/D cruzado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo D Cruzado</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/baguette en V.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Baguette en V</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/conejito cara .png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Carita de Conejito</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/corazones grandes piedras.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Corazónes Grandes </h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/abejita plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Abejita</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/corazon rosa gde.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Corazón Rosa GDE</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/gota piedra blanca.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Gota Piedra Blanca</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/churumbella rosa plata.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Churumbella Rosa</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/cartier delgado.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Cartier Delgado</h3>
+                    <p class="producto-descripcion">DORADO #6,8,9</p>
+                    <p class="producto-descripcion">PLATA #7,8,9</p>
+                    <p class="producto-descripcion">ROSA #8</p>
+                    <p class="producto-precio">$129 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/cartier grueso.png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Cartier Grueso</h3>
+                    <p class="producto-descripcion">DORADO #6, PLATA #6, ROSA#6</p>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ANILLOS/corazones ch .png" alt="anillo " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Anillo Corazones CH</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <!-- Repetir para otros productos -->
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/captura.png" alt="Contacto">
-            <p>ENVIANOS CAPTURA DEL PRODUCTO
-                A NUESTRO INSTAGRAM</p>
+        <div class="footer-content">
+            <div class="footer-section follow">
+                <h2>Síguenos</h2>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/by.aangeel/" target="_blank" style="color: #fff;">Instagram</a></p>
+                <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100072445416755&mibextid=LQQJ4d" target="_blank" style="color: #fff;">Facebook</a></p>
+            </div>
         </div>
-        <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entreper.png" alt="Redes Sociales">
-            <p>ENTREGAS PERSONALES SEGURAS</p>
+        <div class="footer-bottom">
+            &copy; 2024 by.aangeel | Todos los derechos reservados
         </div>
-        
     </footer>
-
+    
 </body>
 </html>

@@ -3,458 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BY AANGEEL</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Joyería by.aangeel</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .main-header {
-            background-color: #ffffff;
-            color: #000000;
-            
-            text-align: center;
-            position: fixed;
-            top: 0; /* Fija el encabezado en la parte superior de la ventana */
-            width: 100%; /* Ancho completo del encabezado */
-            z-index: 999; /* Asegura que el encabezado esté por encima de otros elementos */
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-            text-align: left;
-            display: none;
-            position: absolute;
-            top: 60px; /* Ajusta esta línea según sea necesario */
-            left: 10px;
-            z-index: 1;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline-block; /* Cambio para que los elementos se muestren en línea */
-            margin-right: 10px; /* Espacio entre los elementos */
-        }
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            display: flex;
-            align-items: center; /* Centra verticalmente el texto e icono */
-            padding: 10px 20px;
-            border-radius: 5px;
-            background-color: #ddd;
-            margin-right: 30px
-        }
-        nav ul li a img {
-            max-width: 20px; /* Tamaño máximo de la imagen */
-            margin-right: 5px; /* Espacio entre la imagen y el texto */
-        }
-        nav ul li a:hover {
-            background-color: #ccc;
-        }
-        
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste del número de columnas y el ancho mínimo/máximo */
-            grid-gap: 20px; /* Espacio entre las columnas */
-            padding: 20px; /* Ajuste del espacio interior */
-            overflow-x: auto; /* Activar desplazamiento horizontal */
-            white-space: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
-            scroll-behavior: smooth; /* Activar desplazamiento suave */
-            -webkit-overflow-scrolling: touch; /* Activar desplazamiento suave en dispositivos iOS */
-        }
-        .product {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            display: inline-block; /* Ajuste para permitir el desplazamiento horizontal */
-            transition: transform 0.3s ease-in-out; /* Ajuste de la duración y suavidad de la animación */
-            position: relative; /* Agregar posición relativa para el sombreado */
-        }
-        .product::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 10px; /* Altura de la sombra */
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%); /* Degradado para la sombra */
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-        .product:hover {
-            transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el ratón */
-        }
-        .product img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        .product-info .discount-label {
-            position: absolute;
-            top: -20px; /* Posición del texto encima del precio */
-            left: 10px; /* Ajusta esta línea para el espaciado izquierdo */
-            background-color: #000000f8;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-family: 'Times New Roman', Times, serif; /* Cambio de tipografía */
-        }
-        .product-info p {
-            color: #333; /* Color del precio */
-        }
-        
-        .search-section {
-            text-align: center;
-            margin-bottom: 20px;
-            margin-top: 40px;
-        }
-        .search-section button {
-            margin-right: 25px;
-            background-color: #fffffff8;
-            color: #000000;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            border: 2px solid black;
-        }
-        
-        .search-section button:hover {
-            background-color: #000000f8;
-            color: #ffffff;
-        }
-        .search-section .button-link {
-            display: inline-block;
-        }
-
-        .search-section .button-link button {
-            margin: 0 10px 10px 0; /* Ajusta el margen horizontal entre botones */
-            padding: 10px 25px; /* Ajusta el padding para hacer los botones más grandes */
-        }
-        .news-section {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .news-section img {
-            max-width: 100%;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding-top: 60px;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            border-radius: 10px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .best-seller-container {
-    text-align: center; /* Centra el contenido horizontalmente */
-    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
-}
-.best-seller-container h2 {
-    margin-bottom: 20px; /* Ajusta el margen inferior del encabezado según sea necesario */
-    font-family: 'Times New Roman', Times, serif;
-    color: #000000f8;
-    text-align: center;
-}
-
-        .best-seller-section {
-          overflow-x: auto; 
-          white-space: nowrap;
-          scroll-behavior: smooth; 
-          -webkit-overflow-scrolling: touch; 
-          margin-top: 10px; 
-          padding: 20px; 
-        }
-        .best-seller-item {
-            display: inline-block;
-            margin-right: 1px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #ffffff;
-            border: 1px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .best-seller-item:hover {
-            transform: scale(1.05);
-        }
-        .best-seller-item img {
-            max-width: 190px;
-            height: auto;
-            margin-right: 1px;
-            border-radius: 5px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .best-seller-section h2 {
-            font-family: 'Times New Roman', Times, serif;
-            text-align: center;
-            color: #000000f8;
-        }
-        footer {
-            background-color: #fffffff8;
-            color: #000000f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        footer .contact-info,
-        footer .social-media {
-            flex-basis: 50%;
-        }
-        footer .contact-info img,
-        footer .social-media img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-        footer .contact-info p,
-        footer .social-media p {
-            margin: 0;
-            text-align: center;
-        }
-        .best-seller-item p {
-            font-family: 'Times New Roman', Times, serif;
-            color: #000000f8;
-            text-align: center;
-        }
-        .horizontal-images {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            white-space: nowrap;
-            margin-top: 10px;
-        }
-        .horizontal-images img {
-            max-width: 250px;
-            height: auto;
-            margin-right: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .horizontal-images img:hover {
-            transform: scale(1.05);
-        }
-        .best-seller-item img {
-            transition: transform 0.3s ease-in-out;
-        }
-        .best-seller-item:hover img {
-            transform: scale(1.1);
-        }
-        .button-text {
-            text-align: center;
-            margin-top: 30px;
-            font-family: 'Times New Roman', Times, serif;
-            color: #000000f8;
-        }
-        .large-text {
-            font-size: 24px;
-        }
-        .image-container {
-            text-align: center;
-            margin-right: 10px;
-            margin-bottom: 5px;
-        }
-        .image-container .first-text {
-            font-size: 23px;
-            color: rgb(0, 0, 0);
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .image-container .second-text {
-            font-size: 14px;
-            color: rgb(0, 0, 0);
-            font-family: 'Times New Roman', Times, serif;
-            margin-top: -12px;
-        }
-        .additional-section {
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    margin-top: 10px;
-}
-
-.additional-section img {
-    max-width: 100%;
-    height: auto;
-    margin-right: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.indicator-buttons {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.indicator-button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 1px solid black;
-    background-color: white;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.indicator-button.active {
-    background-color: black;
-}
-/* Desactivar el desplazamiento horizontal en dispositivos móviles */
-.swiper-container {
-        overflow-x: hidden;
-    }
-    /* Ajustar el ancho máximo del contenedor del slider */
-    .swiper-container .swiper-wrapper {
-        max-width: 100%;
-    }
-    /* Ajustar el ancho máximo de las imágenes del slider */
-    .swiper-container img {
-        max-width: 100%;
-        height: auto;
-    }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap">
+    <meta property="og:title" content="Joyería by.aangeel">
+    <meta property="og:description" content="Las mejores joyas para cada ocasión.">
+    <meta property="og:image" content="./INICIO/icon.jpg">
+    <link rel="icon" href="./INICIO/byaangeel.png" type="image/x-icon">
 </head>
 <body>
-    <header class="main-header">
-        <img src="./INICIO/logo3.png" height="40px" alt="Logo de la tienda">
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- Unicode for hamburger menu icon -->
+        </div>
     </header>
 
-    <section class="news-section">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="./SLIDER/1.png" alt="Noticia 1">
-                </div>
-                <!-- Agrega más diapositivas según sea necesario -->
-                <div class="swiper-slide">
-                    <img src="./SLIDER/2.png" alt="Noticia 2">
-                </div>
-            </div>
-        </div>
-    </section>
+    <nav id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="collares.html">Collares</a>
+        <a href="cadenas.html">Cadenas</a>
+        <a href="pulseras.html">Pulseras</a>
+        <a href="brazaletes.html">Brazaletes</a>
+        <a href="aretes.html">Aretes</a>
+        <a href="conjuntos.html">Conjuntos</a>
+        <a href="anillos.html">Anillos</a>
+        <a href="joyeros.html">Joyeros</a>
+    </nav>
 
-    <section class="best-seller-container">
-        <h2>BEST SELLERS 🔥</h2>
-        <div class="best-seller-section">
-            <div class="best-seller-item">
-                <img src="./VENDIDO/1.png" alt="Best Seller 1">
-                <p>Gargantillas Ojo Turco</p>
-            </div>
-            <div class="best-seller-item">
-                <img src="./VENDIDO/2.png" alt="Best Seller 2">
-                <p>Inicial Blancas</p>
-            </div>
-            <div class="best-seller-item">
-                <img src="./VENDIDO/3.png" alt="Best Seller 3">
-                <p> Inicial Negras</p>
-            </div>
-            <div class="best-seller-item">
-                <img src="./VENDIDO/4.png" alt="Best Seller 1">
-                <p>Anillos Ajustables</p>
-            </div>
-            <div class="best-seller-item">
-                <img src="./VENDIDO/5.png" alt="Best Seller 1">
-                <p>Pulseras Rolex Delgadas</p>
-            </div>
-            <div class="best-seller-item">
-                <img src="./VENDIDO/6.png" alt="Best Seller 1">
-                <p>Pulseras Rolex Gruesas</p>
-            </div>
-             <!-- Contenido de los productos más vendidos -->
+    <div class="header-image">
+        <img src="./HEADER/Header.png" alt="Imagen de cabecera" loading="lazy">
+        <div class="curvatura"></div>
+        <div class="logo-container">
+            <img src="./INICIO/byaangeel.png" alt="Imagen circular" loading="lazy">
         </div>
-    </section>
-    <div class="button-text" style="margin-top: -20px;">
-        <p class="large-text">CATALOGO❤️</p>
+        <div class="nombre-joyeria">BY AANGEEL</div>
+        <div class="texto-adicional">Descubre nuestras colecciones exclusivas❤️</div>
+        <div class="titulo-buscando">Estoy buscando</div>
     </div>
- 
-    <section>
-        <div class="search-section">
-            <a href="collares.html" class="button-link"><button class="button-link" onclick="showProducts('collares.html')">COLLARES</button></a>
-            <a href="aretes.html" class="button-link"><button class="button-link" onclick="showProducts('aretes.html')">ARETES</button></a>
-            <a href="conjuntos.html" class="button-link"><button class="button-link" onclick="showProducts('conjuntos.html')">CONJUNTOS</button></a>
-            <a href="anillos.html" class="button-link"><button class="button-link" onclick="showProducts('anillos.html')">ANILLOS</button></a>
-            <a href="cadenas.html" class="button-link"><button class="button-link" onclick="showProducts('cadenas.html')">CADENAS</button></a>
-            <a href="pulseras.html" class="button-link"><button class="button-link" onclick="showProducts('pulseras.html')">PULSERAS</button></a>
-            <a href="brazaletes.html" class="button-link"><button class="button-link" onclick="showProducts('brazaletes.html')">BRAZALETES</button></a>
-            <a href="joyeros.html" class="button-link"><button class="button-link" onclick="showProducts('joyeros.html')">JOYEROS</button></a>
-        </div>
-        <div class="button-text">
-                <p class="large-text">¡Vive la mejor experiencia de compra!😍</p>
+
+    <div class="imagenes-scroll-horizontal">
+        <div class="scroll-container">
+            <div class="categoria">
+                <a href="collares.html">
+                    <img src="./CATEGORIAS/1.png" alt="Collares"loading="lazy" class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Collares</div>
             </div>
-            <div class="horizontal-images">
-                <div class="image-container">
-                    <img src="./NOTICIAS/1.png" alt="Imagen 1">
-                    <p class="first-text">📦Entregas Personales</p>
-                    <p class="second-text">📍Tehuacán y sus alrededores</p>
-                </div>
-                <div class="image-container">
-                    <img src="./NOTICIAS/2.png" alt="Imagen 2">
-                    <p class="first-text">Siempre Presentes en Expos</p>
-                    <p class="second-text">Dando las mejores promos🔥</p>
-                </div>
-                <div class="image-container">
-                    <img src="./NOTICIAS/3.png" alt="Imagen 3">
-                    <p class="first-text">Consintiéndote A TI ❤️</p>
-                    <p class="second-text">Lo mejor para los mejores</p>
-                </div>
+            <div class="categoria">
+                <a href="anillos.html">
+                    <img src="./CATEGORIAS/7.png" alt="Anillos"loading="lazy"  class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Anillos</div>
+            </div>
+             <div class="categoria">
+                <a href="pulseras.html">
+                    <img src="./CATEGORIAS/3.png" alt="Pulseras" loading="lazy" class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Pulseras</div>
+            </div>
+            <div class="categoria">
+                <a href="brazaletes.html">
+                    <img src="./CATEGORIAS/4.png" alt="Brazaletes" loading="lazy"  class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Brazaletes</div>
+            </div>
+            <div class="categoria">
+                <a href="aretes.html">
+                    <img src="./CATEGORIAS/5.png" alt="Aretes" loading="lazy" class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Aretes</div>
+            </div><div class="categoria">
+                <a href="cadenas.html">
+                    <img src="./CATEGORIAS/2.png" alt="Cadenas" loading="lazy" class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Cadenas</div>
+            </div>
+            <div class="categoria">
+                <a href="conjuntos.html">
+                    <img src="./CATEGORIAS/6.png" alt="Conjuntos" loading="lazy" class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Conjuntos</div>
+            </div>
+            <div class="categoria">
+                <a href="joyeros.html">
+                    <img src="./CATEGORIAS/8.png" alt="Joyeros" loading="lazy" class="imagen-scroll">
+                </a>
+                <div class="nombre-categoria">Joyeros</div>
+            </div>
         </div>
-    </section>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // Inicializar Swiper para el slider de noticias
-        var swiper = new Swiper(".swiper-container", {
-            loop: true, // Repetir el slider al llegar al final
-            autoplay: {
-                delay: 8000, // Intervalo de cambio de diapositivas (en milisegundos)
-            },
-            pagination: {
-                el: ".swiper-pagination", // Selector del contenedor de paginación
-                clickable: true, // Permitir hacer clic en los puntos de paginación para navegar
-            },
-        });
-    </script>
-    <!-- Nuevo footer al final de la página -->
-    <footer>
-        <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/captura.png" alt="Contacto">
-            <p>ENVIANOS CAPTURA DEL PRODUCTO
-                A NUESTRO INSTAGRAM</p>
+    </div>
+
+    <div class="titulo-novedades">Novedades</div>
+    <div class="novedades-container">
+        <img src="./NOVEDADES/1.png" alt="Novedades 1" loading="lazy" class="imagen-novedades">
+        <img src="./NOVEDADES/2.png" alt="Novedades 2"loading="lazy"  class="imagen-novedades">
+    </div>
+    <div class="titulo-experiencia">¡Vive la mejor experiencia de compra!😍</div>
+
+    <div class="seccion-horizontal">
+        <div class="elemento-horizontal">
+            <img src="./NOTICIAS/3.png" alt="Imagen 1" loading="lazy" class="imagen-horizontal">
+            <div class="titulo-elemento">Siempre Presentes en Expos</div>
+            <div class="descripcion-elemento">Dando las mejores promos🔥</div>
         </div>
-        <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entreper.png" alt="Redes Sociales">
-            <p>ENTREGAS PERSONALES SEGURAS</p>
+        <div class="elemento-horizontal">
+            <img src="./NOTICIAS/2.png" alt="Imagen 2" loading="lazy" class="imagen-horizontal">
+            <div class="titulo-elemento">📦Entregas Personales</div>
+            <div class="descripcion-elemento">📍Tehuacán y sus alrededores</div>
         </div>
-        
-    </footer>
+        <div class="elemento-horizontal">
+            <img src="./NOTICIAS/1.png" alt="Imagen 3"loading="lazy"  class="imagen-horizontal">
+            <div class="titulo-elemento">Consintiéndote A TI ❤️</div>
+            <div class="descripcion-elemento">Lo mejor para los mejores</div>
+        </div>
+        <!-- Agrega más elementos según sea necesario -->
+    </div>
+    <!-- Sección de envíos y entregas -->
+<div class="shipping-section">
+    <div class="shipping-item">
+        <i class="fas fa-shipping-fast fa-3x"></i>
+        <h3>Envíos rápidos</h3>
+        <p>📍Tehuacán y sus alrededores</p>
+    </div>
+    <div class="shipping-item">
+        <i class="fas fa-handshake fa-3x"></i>
+        <h3>Entregas personales</h3>
+        <p>📍Tehuacán y sus alrededores</p>
+    </div>
+</div>
+
+         <!-- Footer -->
+         <footer>
+            <div class="footer-content">
+                <div class="footer-section follow">
+                    <h2>Síguenos</h2>
+                    <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/by.aangeel/" target="_blank" style="color: #fff;">Instagram</a></p>
+                    <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100072445416755&mibextid=LQQJ4d" target="_blank" style="color: #fff;">Facebook</a></p>
+                </div>
+                <div class="footer-section about">
+                    <h2>Sobre nosotros</h2>
+                    <p>Joyería by.aangeel ofrece una amplia variedad de joyas para todas las ocasiones. Nos enorgullece ofrecer productos de alta calidad y un servicio al cliente excepcional.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 by.aangeel | Todos los derechos reservados
+            </div>
+        </footer>        
+    <script src="script.js"></script>
 </body>
 </html>

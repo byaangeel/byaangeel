@@ -1,0 +1,206 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial, sans-serif';
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Menú de Categorías */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #cbc7c8;
+}
+
+.side-menu .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Header */
+.header-image {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    max-height: 800px; /* Ajusta según sea necesario para mantener una imagen más alta */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+.curvatura {
+    position: absolute;
+    bottom: -10px; /* Ajusta la posición según sea necesario */
+    width: 100%;
+    height: 120px; /* Incrementa la altura para una curvatura más pronunciada */
+    background-color: #ffffff;
+    clip-path: ellipse(60% 100% at 50% 100%); /* Ajusta los valores para una curvatura más pronunciada */
+}
+
+.logo-container {
+    width: 130px; /* Ajusta el tamaño del contenedor del logo */
+    height: 130px;
+    border-radius: 50%; /* Para hacerlo circular */
+    background-color: #ffffff; /* Color de fondo del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Para recortar la imagen del logo si es necesario */
+    position: absolute;
+    bottom: 30px; /* Ajusta la posición vertical del círculo para que esté encima de la curvatura */
+    left: calc(50% - 50px + 45px); /* Centra horizontalmente y mueve 20px a la derecha */
+    transform: translateX(-50%); /* Centra horizontalmente respecto al contenedor */
+    z-index: 2; /* Coloca el logo encima de la curvatura */
+}
+
+.nombre-joyeria {
+    font-size: 25px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px; /* Reducido el margen inferior */
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item {
+    margin-right: 5px;
+}
+
+.breadcrumb-divider {
+    margin: 0 5px;
+    color: #777;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #777;
+    transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: #cbc7c8;
+}
+
+.breadcrumbs span {
+    font-weight: bold;
+}
+
+/* Sección de Productos */
+.productos-container {
+    padding: 0 20px;
+}
+
+.titulo-seccion {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px; /* Reducido el margen inferior */
+}
+
+.descripcion-seccion {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.productos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Ajustado el gap para que los productos estén más juntos */
+    justify-content: space-between; /* Espacio entre productos */
+}
+
+.producto-item {
+    width: calc(50% - 10px); /* Muestra dos productos por fila en dispositivos móviles */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.producto-item:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card {
+    padding: 0; /* Elimina el padding para que no haya espacio adicional */
+}
+
+.producto-imagen {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px; /* Bordes redondeados sólo en las esquinas superiores */
+    border-top-right-radius: 10px; /* Bordes redondeados sólo en las esquinas superiores */
+}
+
+.producto-info {
+    text-align: center;
+    padding: 10px; /* Añade padding para separar el texto de la imagen */
+}
+
+.producto-nombre {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 18px; /* Ajustado el tamaño del texto */
+    color: #333;
+    margin: 10px 0;
+}
+
+.producto-precio {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px; /* Ajustado el tamaño del texto */
+    color: #000000;
+    margin-bottom: 10px;
+}
+.producto-descripcion {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .productos-grid {
+        justify-content: space-around;
+    }
+
+    .producto-item {
+        width: calc(50% - 10px); /* Muestra dos productos por fila en dispositivos móviles */
+    }
+}

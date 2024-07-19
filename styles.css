@@ -1,0 +1,378 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial, sans-serif';
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Icono de menú */
+.menu-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Menú lateral */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #d8486a;
+}
+
+.side-menu .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Imagen de cabecera */
+.header-image {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+}
+
+.curvatura {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 120px;
+    background-color: #ffffff;
+    clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+.logo-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 50px + 45px);
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.nombre-joyeria {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+.texto-adicional {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #333;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.titulo-buscando {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para las imágenes desplazables */
+.imagenes-scroll-horizontal {
+    margin: 150px 0 80px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center;
+}
+
+.categoria {
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.imagen-scroll {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px 
+}
+
+.nombre-categoria {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para la sección de novedades */
+.titulo-novedades {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+    padding-left: 20px;
+}
+
+.novedades-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.imagen-novedades {
+    width: 35%;
+    height: auto;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.descripcion-novedades {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Estilo para el nuevo título */
+.titulo-experiencia {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Estilos para la sección horizontal */
+.seccion-horizontal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 20px;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+.elemento-horizontal {
+    display: inline-block;
+    text-align: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.imagen-horizontal {
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+
+}
+
+.titulo-elemento {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.descripcion-elemento {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .header-image img {
+        max-height: 400px;
+    }
+
+    .texto-adicional {
+        font-size: 16px;
+        bottom: -60px;
+    }
+
+    .titulo-buscando {
+        font-size: 20px;
+        bottom: -100px;
+    }
+
+    .imagen-scroll {
+        width: 150px;
+    }
+
+    .titulo-novedades {
+        font-size: 24px;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .novedades-container {
+        flex-direction: row;
+        justify-content: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 20px;
+    }
+
+    .imagen-novedades {
+        width: 45%;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+        border: 2px 
+    }
+
+    .seccion-horizontal {
+        padding: 0;
+    }
+
+    .elemento-horizontal {
+        margin-right: 10px;
+    }
+
+    .imagen-horizontal {
+        width: 300px; /* Mantener las imágenes grandes en móvil */
+    }
+    
+    /* Ajuste para la primera imagen en móvil en ambas secciones */
+    .categoria:first-child,
+    .elemento-horizontal:first-child {
+        padding-left: 20px;
+    }
+}
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 50px; /* Añade margen superior para separar el footer de las imágenes */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #d8486a;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+/* Estilos para la sección de envíos y entregas */
+.shipping-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px 0;
+}
+
+.shipping-item {
+    text-align: center;
+    max-width: 300px;
+    color: #333; /* Color de texto principal */
+    margin-top: 20px; /* Espacio arriba para separación */
+}
+
+.shipping-item i {
+    font-size: 3em;
+    color: #000; /* Color de íconos negro */
+    margin-bottom: 10px;
+}
+
+.shipping-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.shipping-item p {
+    font-size: 14px;
+    color: #666;
+}

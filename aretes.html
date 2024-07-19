@@ -3,317 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARETES</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #ffffff;
-            color: #000000;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 60px auto 20px;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .category {
-            font-size: 24px;
-            margin-top: 10px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #333333;
-        }
-
-        .subtext {
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #666666;
-        }
-
-        .product {
-           background-color: #ffffff;
-           border-radius: 10px;
-           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-           margin-bottom: 20px;
-           overflow: hidden;
-           transition: transform 0.3s ease-in-out;
-           width: 250px; /* Ajusta el ancho según sea necesario */
-        }
-
-        .product:hover {
-           transform: translateY(-5px);
-        }
-
-        .product img {
-           width: 100%;
-           border-top-left-radius: 10px;
-           border-top-right-radius: 10px;
-        }
-
-        .product .details {
-            padding: 15px;
-        }
-
-        .product h2, .product p {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #000000;
-            text-align: center; 
-            font-weight: bold;
-        }
-
-        .btn {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border: 2px solid #000000;
-            cursor: pointer;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .btn:hover {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        footer {
-            background-color: #fffffff8;
-            color: #000000f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        footer .contact-info,
-        footer .social-media {
-            flex-basis: 50%;
-        }
-
-        footer .contact-info img,
-        footer .social-media img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-
-        footer .contact-info p,
-        footer .social-media p {
-            margin: 0;
-            text-align: center;
-        }
-
-        .product.out-of-stock {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .product.out-of-stock .btn-modal {
-            background-color: #ccc;
-            color: #666;
-            border-color: #ccc;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .product {
-                width: calc(100% - 20px);
-                margin: 10px;
-            }
-
-            .product h2 {
-                font-size: 18px;
-            }
-
-            .product p {
-                font-size: 14px;
-            }
-
-            .container {
-                justify-content: center;
-            }
-        }
-
-        .new-label {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 23px;
-            font-weight: bold;
-            z-index: 1;
-            display: inline-block;
-            opacity: 0.8;
-        }
-
-        .new-product {
-            position: relative;
-        }
-    </style>
+    <title>Aretes - Joyería by.aangeel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productos.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="./INICIO/byaangeel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
-    <header>
-        <img src="./INICIO/logo3.png" height="40px" alt="Logo de la tienda">
-    </header>
+    <!-- Menú desplegable -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="collares.html">Collares</a>
+        <a href="cadenas.html">Cadenas</a>
+        <a href="pulseras.html">Pulseras</a>
+        <a href="brazaletes.html">Brazaletes</a>
+        <a href="aretes.html">Aretes</a>
+        <a href="conjuntos.html">Conjuntos</a>
+        <a href="anillos.html">Anillos</a>
+        <a href="joyeros.html">Joyeros</a>
+    </div>
 
-    <div class="container">
-        <div style="text-align: left;">
-            <a href="index.html" class="btn">Inicio</a>
-            <div class="category">Aretes</div>
-            <div class="subtext">Estilo sin igual con nuestras exclusivas cadenas de joyería.</div>
+    <!-- Header -->
+    <div class="header-image">
+        <img src="./HEADER/Headeraretes.png" alt="Imagen de cabecera" loading="lazy">
+        <div class="curvatura"></div>
+        <div class="logo-container">
+            <img src="./INICIO/byaangeel.png" alt="Imagen circular" loading="lazy">
         </div>
+        <div class="nombre-joyeria">BY AANGEEL</div>
+    </div>
 
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./ARETES/1.png" alt="ANILLOS 1">
-            <h2>Huggies Ojo Turco</h2>
-            <p>$139 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./ARETES/2.png" alt="ANILLOS 1">
-            <h2>Huggies Ojo Turco</h2>
-            <p>$13 9 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./ARETES/4.png" alt="ANILLOS 1">
-            <h2>Huggies Astronauta Verde</h2>
-            <p>$129 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./ARETES/5.png" alt="ANILLOS 1">
-            <h2>Ear Cuff Chunky</h2>
-            <p>$129 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/10.png" alt="ANILLOS Nuevo">
-            <h2>Arete Dupe Espiral Verde</h2>
-            <p>$149 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/11.png" alt="ANILLOS Nuevo">
-            <h2>Arete Dupe Espiral Rosa</h2>
-            <p>$149.00 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/13.png" alt="ANILLOS Nuevo">
-            <h2>Hoops Lisa</h2>
-            <p>$129 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/14.png" alt="ANILLOS Nuevo">
-            <h2>Arete Gota con piedra GDE</h2>
-            <p>$189 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/15.png" alt="ANILLOS Nuevo">
-            <h2>Arete Gota con piedras GDE</h2>
-            <p>$199 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/16.png" alt="ANILLOS Nuevo">
-            <h2>Aretes Gota con piedra CH</h2>
-            <p>$159 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/17.png" alt="ANILLOS Nuevo">
-            <h2>Aretes Gota con piedra CH</h2>
-            <p>$159 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/19.png" alt="ANILLOS Nuevo">
-            <h2>Arete Luna</h2>
-            <p>$159 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/20.png" alt="ANILLOS Nuevo">
-            <h2>Arete Gota espiral </h2>
-            <p>$149 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/21.png" alt="ANILLOS Nuevo">
-            <h2>Arete Gota espiral </h2>
-            <p>$149 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/25.png" alt="ANILLOS Nuevo">
-            <h2>Arete Circular</h2>
-            <p>$149 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./ARETES/28.png" alt="ANILLOS Nuevo">
-            <h2>Arete estilo Gota</h2>
-            <p>$159 MXN</p>
-            
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-item">Inicio</a>
+        <span class="breadcrumb-divider">/</span>
+        <span class="breadcrumb-item">Aretes</span>
+    </div>
+
+    <!-- Sección de productos -->
+    <div class="productos-container">
+        <h2 class="titulo-seccion">Aretes</h2>
+        <p class="descripcion-seccion">¡Encuentra los aretes perfectos para ti! Encontraras variedad de piezas de calidad como huggies, arracadas y mas.</p>
+        <div class="productos-grid">
+            <!-- Ejemplo de producto -->
+            <div class="producto-item">
+                <img src="./ARETES/ojo turco azul y rojo.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Huggie Ojo Turco</h3>
+                    <p class="producto-descripcion">Disponible: Azul y Rojo</p>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/ojo turco modelo 2 azul.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Huggie Ojo Turco (modelo II)</h3>
+                    <p class="producto-descripcion">Disponible: Azul</p>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/astronauta verde.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Huggie Astronauta Verde</h3>
+                    <p class="producto-precio">$129 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/ear cuff chunky.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Ear Cuff Chunky</h3>
+                    <p class="producto-precio">$129 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/espiral verde.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre"> Dupe Espiral Verde </h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/espiral rojo.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre"> Dupe Espiral Rosa</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/hoops lisa.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Hoops Lisa</h3>
+                    <p class="producto-precio">$129 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/gota con piedra GDE Dorado.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Gota con Piedra GDE Dorado</h3>
+                    <p class="producto-precio">$189 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/gota con piedra gde Plata.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Gota con Piedra GDE Plata</h3>
+                    <p class="producto-precio">$189 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/gota con piedra ch dorado.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Gota con piedra CH Dorado</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/gota con piedra ch plata.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Gota con Piedra CH Plata</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/luna.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Luna</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/espiral dorado.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Gota Espiral Dorado</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/espiral plata.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Gota Espiral Plata</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/circular dorado.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Circular Dorado</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/circular gde plata.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Circular GDE Plata</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/rolex dorado.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Arete Rolex </h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./ARETES/picos dorado.png" alt="Arete " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Huggie Puas</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <!-- Repetir para otros productos -->
         </div>
     </div>
-    <footer>
-        <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/captura.png" alt="Contacto">
-            <p>ENVIANOS CAPTURA DEL PRODUCTO
-                A NUESTRO INSTAGRAM</p>
-        </div>
-        <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entreper.png" alt="Redes Sociales">
-            <p>ENTREGAS PERSONALES SEGURAS</p>
-        </div>
-        
-    </footer>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section follow">
+                <h2>Síguenos</h2>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/by.aangeel/" target="_blank" style="color: #fff;">Instagram</a></p>
+                <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100072445416755&mibextid=LQQJ4d" target="_blank" style="color: #fff;">Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 by.aangeel | Todos los derechos reservados
+        </div>
+    </footer>
+    
 </body>
 </html>

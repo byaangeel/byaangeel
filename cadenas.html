@@ -3,327 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CADENAS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #ffffff;
-            color: #000000;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 60px auto 20px;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .category {
-            font-size: 24px;
-            margin-top: 10px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #333333;
-        }
-
-        .subtext {
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #666666;
-        }
-
-        .product {
-           background-color: #ffffff;
-           border-radius: 10px;
-           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-           margin-bottom: 20px;
-           overflow: hidden;
-           transition: transform 0.3s ease-in-out;
-           width: 250px; /* Ajusta el ancho según sea necesario */
-        }
-
-        .product:hover {
-           transform: translateY(-5px);
-        }
-
-        .product img {
-           width: 100%;
-           border-top-left-radius: 10px;
-           border-top-right-radius: 10px;
-        }
-
-        .product .details {
-            padding: 15px;
-        }
-
-        .product h2, .product p {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #000000;
-            text-align: center; 
-            font-weight: bold;
-        }
-        .product .description {
-            font-size: 16px;
-            color: #666666;
-            text-align: center;
-        }
-
-        .btn {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border: 2px solid #000000;
-            cursor: pointer;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .btn:hover {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        footer {
-            background-color: #fffffff8;
-            color: #000000f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        footer .contact-info,
-        footer .social-media {
-            flex-basis: 50%;
-        }
-
-        footer .contact-info img,
-        footer .social-media img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-
-        footer .contact-info p,
-        footer .social-media p {
-            margin: 0;
-            text-align: center;
-        }
-
-        .product.out-of-stock {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .product.out-of-stock .btn-modal {
-            background-color: #ccc;
-            color: #666;
-            border-color: #ccc;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .product {
-                width: calc(100% - 20px);
-                margin: 10px;
-            }
-
-            .product h2 {
-                font-size: 18px;
-            }
-
-            .product p {
-                font-size: 14px;
-            }
-
-            .container {
-                justify-content: center;
-            }
-        }
-
-        .new-label {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 23px;
-            font-weight: bold;
-            z-index: 1;
-            display: inline-block;
-            opacity: 0.8;
-        }
-
-        .new-product {
-            position: relative;
-        }
-    </style>
+    <title>Cadenas - Joyería by.aangeel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productos.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="./INICIO/byaangeel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
-    <header>
-        <img src="./INICIO/logo3.png" height="40px" alt="Logo de la tienda">
-    </header>
-
-    <div class="container">
-        <div style="text-align: left;">
-            <a href="index.html" class="btn">Inicio</a>
-            <div class="category">Cadenas</div>
-            <div class="subtext">Estilo sin igual con nuestras exclusivas cadenas de joyería.</div>
-        </div>
-
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./CADENAS/1.png" alt="ANILLOS 1">
-            <h2>Cadenas Acero </h2>
-            <p>$149 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto 1 -->
-        <div class="product out-of-stock">
-            <img src="./CADENAS/2.png" alt="ANILLOS 1">
-            <h2>Cadena Trebol Azul</h2>
-            <p>AGOTADO</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./CADENAS/4.png" alt="ANILLOS 1">
-            <h2>Gargantilla Placa</h2>
-            <p>$189 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./CADENAS/5.png" alt="ANILLOS 1">
-            <h2>Cadena Link Grueso</h2>
-            <p>$279 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./CADENAS/6.png" alt="ANILLOS 1">
-            <h2>Gargantilla Baguette (Verde)</h2>
-            <p>$249 MXN</p>
-            <!-- Aquí solía estar el botón para ver los modelos -->
-        </div>
-        
-        <!-- Producto Agotado -->
-        <div class="product" data-product="1">
-            <img src="./CADENAS/7.png" alt="ANILLOS Agotado">
-            <h2>Cadena Ice (plata con Rosa)</h2>
-            <p>$399 MXN</p>
-        </div>
-
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./CADENAS/8.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Corazón</h2>
-            <p>$179 MXN</p>
-            <div class="new-label">Nuevo</div>   
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product out-of-stock">
-            <img src="./CADENAS/9.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Trebol Negro</h2>
-            <p>AGOTADO</p>
-            <div class="new-label">Nuevo</div>    
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./CADENAS/10.png" alt="ANILLOS Nuevo">
-            <h2>Cadena ICE Plata</h2>
-            <p>$349 MXN</p>
-            <div class="new-label">Nuevo</div>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./CADENAS/11.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Tennis Combinada </h2>
-            <p>$249 MXN</p>
-            <div class="new-label">Nuevo</div>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./CADENAS/12.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Panza de Víbora Plata </h2>
-            <p>$169 MXN</p>
-            <div class="new-label">Nuevo</div>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./CADENAS/13.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Torsal Gruesa </h2>
-            <p>$249 MXN</p>
-            <div class="new-label">Nuevo</div>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./CADENAS/14.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Tennis con Piedra Azul</h2>
-            <p>$259 MXN</p>
-            <div class="new-label">Nuevo</div>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product out-of-stock">
-            <img src="./CADENAS/15.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Link</h2>
-            <p>AGOTADO</p>
-            <div class="new-label">Nuevo</div>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./CADENAS/16.png" alt="ANILLOS Nuevo">
-            <h2>Cadena Torsal Delgada</h2>
-            <p>$179 MXN</p>
-            <div class="new-label">Nuevo</div>
-            
-        </div>
-       
+    <!-- Menú desplegable -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="collares.html">Collares</a>
+        <a href="aretes.html">Aretes</a>
+        <a href="conjuntos.html">Conjuntos</a>
+        <a href="anillos.html">Anillos</a>
+        <a href="cadenas.html">Cadenas</a>
+        <a href="pulseras.html">Pulseras</a>
+        <a href="brazaletes.html">Brazaletes</a>
+        <a href="joyeros.html">Joyeros</a>
     </div>
 
-    <footer>
-        <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/captura.png" alt="Contacto">
-            <p>ENVIANOS CAPTURA DEL PRODUCTO
-                A NUESTRO INSTAGRAM</p>
+    <!-- Header -->
+    <div class="header-image">
+        <img src="./HEADER/Headercadenas.png" alt="Imagen de cabecera" loading="lazy">
+        <div class="curvatura"></div>
+        <div class="logo-container">
+            <img src="./INICIO/byaangeel.png" alt="Imagen circular" loading="lazy">
         </div>
-        <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entreper.png" alt="Redes Sociales">
-            <p>ENTREGAS PERSONALES SEGURAS</p>
-        </div>
-        
-    </footer>
+        <div class="nombre-joyeria">BY AANGEEL</div>
+    </div>
 
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-item">Inicio</a>
+        <span class="breadcrumb-divider">/</span>
+        <span class="breadcrumb-item">Cadenas</span>
+    </div>
+
+    <!-- Sección de productos -->
+    <div class="productos-container">
+        <h2 class="titulo-seccion">Cadenas</h2>
+        <p class="descripcion-seccion">Estilo sin igual con nuestras exclusivas cadenas de joyería.</p>
+        <div class="productos-grid">
+            <!-- Ejemplo de producto -->
+            <div class="producto-item">
+                <img src="./CADENAS/iced plata con rosa.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena ice Plata con Rosa</h3>
+                    <p class="producto-precio">$399 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/pavonada acero.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena Cartier Pavonada </h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/placa.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Gargantilla Placa</h3>
+                    <p class="producto-precio">$189 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/link grueso.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena Link Grueso</h3>
+                    <p class="producto-precio">$279 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/baguette verde.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Gargantilla Baguette </h3>
+                    <p class="producto-descripcion">Disponible: Verde</p>
+                    <p class="producto-precio">$249 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/corazon.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena Corazón</h3>
+                    <p class="producto-precio">$179 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/panza de vibora plata.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena Panza de Vibora Plata</h3>
+                    <p class="producto-precio">$169 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/torsal grueso.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena Torsal Grueso</h3>
+                    <p class="producto-precio">$249 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/tennis piedra azul.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena Tennis con Piedra Azul</h3>
+                    <p class="producto-precio">$259 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./CADENAS/torsal delgado.png" alt="Cadena " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Cadena Torsal Delgada</h3>
+                    <p class="producto-precio">$179 MXN</p>
+                </div>
+            </div>
+            <!-- Repetir para otros productos -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section follow">
+                <h2>Síguenos</h2>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/by.aangeel/" target="_blank" style="color: #fff;">Instagram</a></p>
+                <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100072445416755&mibextid=LQQJ4d" target="_blank" style="color: #fff;">Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 by.aangeel | Todos los derechos reservados
+        </div>
+    </footer>
+    
 </body>
 </html>

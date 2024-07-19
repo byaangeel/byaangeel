@@ -3,326 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLLARES</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #ffffff;
-            color: #000000;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 60px auto 20px;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .category {
-            font-size: 24px;
-            margin-top: 10px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #333333;
-        }
-
-        .subtext {
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #666666;
-        }
-
-        .product {
-           background-color: #ffffff;
-           border-radius: 10px;
-           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-           margin-bottom: 20px;
-           overflow: hidden;
-           transition: transform 0.3s ease-in-out;
-           width: 250px; /* Ajusta el ancho según sea necesario */
-        }
-
-        .product:hover {
-           transform: translateY(-5px);
-        }
-
-        .product img {
-           width: 100%;
-           border-top-left-radius: 10px;
-           border-top-right-radius: 10px;
-        }
-
-        .product .details {
-            padding: 15px;
-        }
-
-        .product h2, .product p {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #000000;
-            text-align: center; 
-            font-weight: bold;
-        }
-        .product .description {
-            font-size: 16px;
-            color: #666666;
-            text-align: center;
-        }
-
-        .btn {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border: 2px solid #000000;
-            cursor: pointer;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .btn:hover {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        footer {
-            background-color: #fffffff8;
-            color: #000000f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        footer .contact-info,
-        footer .social-media {
-            flex-basis: 50%;
-        }
-
-        footer .contact-info img,
-        footer .social-media img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-
-        footer .contact-info p,
-        footer .social-media p {
-            margin: 0;
-            text-align: center;
-        }
-
-        .product.out-of-stock {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .product.out-of-stock .btn-modal {
-            background-color: #ccc;
-            color: #666;
-            border-color: #ccc;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .product {
-                width: calc(100% - 20px);
-                margin: 10px;
-            }
-
-            .product h2 {
-                font-size: 18px;
-            }
-
-            .product p {
-                font-size: 14px;
-            }
-
-            .container {
-                justify-content: center;
-            }
-        }
-
-        .new-label {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 23px;
-            font-weight: bold;
-            z-index: 1;
-            display: inline-block;
-            opacity: 0.8;
-        }
-
-        .new-product {
-            position: relative;
-        }
-    </style>
+    <title>Collares - Joyería by.aangeel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productos.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="./INICIO/byaangeel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
-    <header>
-        <img src="./INICIO/logo3.png" height="40px" alt="Logo de la tienda">
-    </header>
-
-    <div class="container">
-        <div style="text-align: left;">
-            <a href="index.html" class="btn">Inicio</a>
-            <div class="category">Collares</div>
-            <div class="subtext">Variedad de diseños para cada ocasión, encuentra tu favorito aquí 😍</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/iniciales blancas.png" alt="ANILLOS Nuevo">
-            <h2>Gargantilla Inicial Blanca</h2>
-            <p>$79 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/iniciales negras.png" alt="ANILLOS Nuevo">
-            <h2>Gargantilla Inicial Negro</h2>
-            <p>$79 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/piedra azul.png" alt="ANILLOS Nuevo">
-            <h2>Gargantilla de Piedra</h2>
-            <p>$289 MXN</p>
-            
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/cuadrado ngro.png" alt="ANILLOS 1">
-            <h2>Collar Cuadrado Negro</h2>
-            <p>$179 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/atrapasueños.png" alt="ANILLOS 1">
-            <h2>Collar Ojo Truco de Atrapasueños</h2>
-            <p>$149 MXN</p>
-        </div>
-        
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/osito corazon.png" alt="ANILLOS 1">
-            <h2>Collar Osito Corazón</h2>
-            <p>$139 MXN</p>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/osito.png" alt="ANILLOS 1">
-            <h2>Collar Osito </h2>
-            <p>$139 MXN</p>
-        </div>
-       
-        
-        <!-- Producto 28 -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/ojo turco simple.png" alt="ANILLOS 1">
-            <h2>Collar Ojo Turco</h2>
-            <p>$129 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/estrella blanca.png" alt="ANILLOS 1">
-            <h2>Collar Estrella Blanca</h2>
-            <p>$139 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/luna roja.png" alt="ANILLOS 1">
-            <h2>Collar Luna Roja</h2>
-            <p>$119 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-       
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/placa rayo.png" alt="ANILLOS 1">
-            <h2>Collar Placa con Rayo</h2>
-            <p>$119 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-    
-        
-       
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/arma.png" alt="ANILLOS 1">
-            <h2>Collar de Arma</h2>
-            <p>$139 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-       <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/llave corazon.png" alt="ANILLOS 1">
-            <h2>Collar Llave Corazón</h2>
-            <p>$119 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/ojo tuco movible.png" alt="ANILLOS 1">
-            <h2>Collar Ojo Turco Colgante</h2>
-            <p>$159 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/ojo tuco rosa.png" alt="ANILLOS 1">
-            <h2>Collar Ojo Turco Rosa</h2>
-            <p>$149 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./COLLARES/ojo tucro gde.png" alt="ANILLOS 1">
-            <h2>Collar Ojo Turco GDE</h2>
-            <p>$129 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        
+    <!-- Menú desplegable -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="collares.html">Collares</a>
+        <a href="cadenas.html">Cadenas</a>
+        <a href="pulseras.html">Pulseras</a>
+        <a href="brazaletes.html">Brazaletes</a>
+        <a href="aretes.html">Aretes</a>
+        <a href="conjuntos.html">Conjuntos</a>
+        <a href="anillos.html">Anillos</a>
+        <a href="joyeros.html">Joyeros</a>
     </div>
 
-    <footer>
-        <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/captura.png" alt="Contacto">
-            <p>ENVIANOS CAPTURA DEL PRODUCTO
-                A NUESTRO INSTAGRAM</p>
+    <!-- Header -->
+    <div class="header-image">
+        <img src="./HEADER/Headercollares.png" alt="Imagen de cabecera" loading="lazy">
+        <div class="curvatura"></div>
+        <div class="logo-container">
+            <img src="./INICIO/byaangeel.png" alt="Imagen circular" loading="lazy">
         </div>
-        <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entreper.png" alt="Redes Sociales">
-            <p>ENTREGAS PERSONALES SEGURAS</p>
-        </div>
-        
-    </footer>
+        <div class="nombre-joyeria">BY AANGEEL</div>
+    </div>
 
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-item">Inicio</a>
+        <span class="breadcrumb-divider">/</span>
+        <span class="breadcrumb-item">Collares</span>
+    </div>
+
+    <!-- Sección de productos -->
+    <div class="productos-container">
+        <h2 class="titulo-seccion">Collares</h2>
+        <p class="descripcion-seccion">Descubre nuestra colección de collares elegantes y modernos.</p>
+        <div class="productos-grid">
+            <!-- Ejemplo de producto -->
+            <div class="producto-item">
+                <img src="./COLLARES/inicialglobo.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Collar Inicial en Globo</h3>
+                    <p class="producto-descripcion">Disponibles: C,D,E,F,G,I,K,T,O,P,Y,Z</p>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/inicialblanca.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Collar Inicial Blanca</h3>
+                    <p class="producto-descripcion">Disponibles: A,B,F,G,I,J,K,L,M,N,R,T,P,V,Y,Z</p>
+                    <p class="producto-precio">$79 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/inicialnegro.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Collar Inicial Negro </h3>
+                    <p class="producto-descripcion">Disponibles: E,  Y</p>
+                    <p class="producto-precio">$79 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/piedraazul.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Piedra Azul </h3>
+                    <p class="producto-precio">$289 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/cuadronegro.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Cuadradro Negro </h3>
+                    <p class="producto-precio">$179 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/ojoatrapasueños.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Ojo Turco Atrapasueños</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/osito.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Osito </h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/ojoturcosimple.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Ojo Turco Sencillo </h3>
+                    <p class="producto-precio">$129MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/lunaroja.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Luna Roja </h3>
+                    <p class="producto-precio">$119 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/placarayo.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Placa </h3>
+                    <p class="producto-precio">$119 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/arma.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Arma </h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/emoji.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Emoji </h3>
+                    <p class="producto-precio">$119 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/llavecorazon.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Llave Corazón </h3>
+                    <p class="producto-precio">$119 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/ojoturcocolgante.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Ojo Turco </h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/ojoturcorosa.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Ojo Turco Rosa </h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/serpientemoderno.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Serpiente </h3>
+                    <p class="producto-precio">$169 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./COLLARES/avion.png" alt="Collar " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Colllar Avión </h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <!-- Repetir para otros productos -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section follow">
+                <h2>Síguenos</h2>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/by.aangeel/" target="_blank" style="color: #fff;">Instagram</a></p>
+                <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100072445416755&mibextid=LQQJ4d" target="_blank" style="color: #fff;">Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 by.aangeel | Todos los derechos reservados
+        </div>
+    </footer>
+    
 </body>
 </html>

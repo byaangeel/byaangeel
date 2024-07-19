@@ -3,325 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PULSERAS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #ffffff;
-            color: #000000;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999;
-        }
-
-        h1 {
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 60px auto 20px;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .category {
-            font-size: 24px;
-            margin-top: 10px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #333333;
-        }
-
-        .subtext {
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-align: left;
-            font-family: 'Times New Roman', Times, serif;
-            color: #666666;
-        }
-
-        .product {
-           background-color: #ffffff;
-           border-radius: 10px;
-           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-           margin-bottom: 20px;
-           overflow: hidden;
-           transition: transform 0.3s ease-in-out;
-           width: 250px; /* Ajusta el ancho según sea necesario */
-        }
-
-        .product:hover {
-           transform: translateY(-5px);
-        }
-
-        .product img {
-           width: 100%;
-           border-top-left-radius: 10px;
-           border-top-right-radius: 10px;
-        }
-
-        .product .details {
-            padding: 15px;
-        }
-
-        .product h2, .product p {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #000000;
-            text-align: center; 
-            font-weight: bold;
-        }
-        .product .description {
-            font-size: 16px;
-            color: #666666;
-            text-align: center;
-        }
-
-        .btn {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border: 2px solid #000000;
-            cursor: pointer;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .btn:hover {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        footer {
-            background-color: #fffffff8;
-            color: #000000f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        footer .contact-info,
-        footer .social-media {
-            flex-basis: 50%;
-        }
-
-        footer .contact-info img,
-        footer .social-media img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-
-        footer .contact-info p,
-        footer .social-media p {
-            margin: 0;
-            text-align: center;
-        }
-
-        .product.out-of-stock {
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .product.out-of-stock .btn-modal {
-            background-color: #ccc;
-            color: #666;
-            border-color: #ccc;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .product {
-                width: calc(100% - 20px);
-                margin: 10px;
-            }
-
-            .product h2 {
-                font-size: 18px;
-            }
-
-            .product p {
-                font-size: 14px;
-            }
-
-            .container {
-                justify-content: center;
-            }
-        }
-
-        .new-label {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 23px;
-            font-weight: bold;
-            z-index: 1;
-            display: inline-block;
-            opacity: 0.8;
-        }
-
-        .new-product {
-            position: relative;
-        }
-    </style>
+    <title>Pulseras - Joyería by.aangeel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productos.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="./INICIO/byaangeel.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
 </head>
 <body>
-    <header>
-        <img src="./INICIO/logo3.png" height="40px" alt="Logo de la tienda">
-    </header>
+    <!-- Menú desplegable -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="index.html">Inicio</a>
+        <a href="collares.html">Collares</a>
+        <a href="aretes.html">Aretes</a>
+        <a href="conjuntos.html">Conjuntos</a>
+        <a href="anillos.html">Anillos</a>
+        <a href="cadenas.html">Cadenas</a>
+        <a href="pulseras.html">Pulseras</a>
+        <a href="brazaletes.html">Brazaletes</a>
+        <a href="joyeros.html">Joyeros</a>
+    </div>
 
-    <div class="container">
-        <div style="text-align: left;">
-            <a href="index.html" class="btn">Inicio</a>
-            <div class="category">Pulseras</div>
-            <div class="subtext">Dale ese toque especial a tu outfit con lo último en pulseras</div>
+    <!-- Header -->
+    <div class="header-image">
+        <img src="./HEADER/Headerpulseras.png" alt="Imagen de cabecera" loading="lazy">
+        <div class="curvatura"></div>
+        <div class="logo-container">
+            <img src="./INICIO/byaangeel.png" alt="Imagen circular" loading="lazy">
         </div>
-       
-        <!-- Producto  -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/3.png" alt="ANILLOS 1">
-            <h2>Pullseras Flor (negro)</h2>
-            <p>$99 MXN</p>
-        </div>
-        <!-- Producto  -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/4.png" alt="ANILLOS 1">
-            <h2>Pullsera Flor (azul)</h2>
-            <p>$99 MXN</p>
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/5.png" alt="ANILLOS 1">
-            <h2>Pulsera Doble Dorada</h2>
-            <p>$189 MXN</p>
-            
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/7.png" alt="ANILLOS 1">
-            <h2>Pulsos Iced</h2>
-            <p>$289 MXN</p>
-            
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/10.png" alt="ANILLOS 1">
-            <h2>Pulseras basic</h2>
-            <p>$119 MXN</p>
-            
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/11.png" alt="ANILLOS 1">
-            <h2>Pulseras Jade</h2>
-            <p>$165 MXN</p>
-            
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/13.png" alt="ANILLOS 1">
-            <h2>Pulsos Rolex (grueso)</h2>
-            <p>$249 MXN</p>
-            
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/14.png" alt="ANILLOS 1">
-            <h2>Pulsos Rolex (delgado)</h2>
-            <p>$199 MXN</p>
-            
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/20.png" alt="ANILLOS 1">
-            <h2>Pulsera Doble Negro Mate</h2>
-            <p>$189 MXN</p>
-            
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/21.png" alt="ANILLOS 1">
-            <h2>Pulsera Trebol Verde </h2>
-            <p>$149 MXN</p>
-        </div>
-        <!-- Producto 1 -->
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/22.png" alt="ANILLOS 1">
-            <h2>Pulsera Rolex con Corona (GRUESO)</h2>
-            <p>$289 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <div class="product" data-product="1">
-            <img src="./PULSERAS/23.png" alt="ANILLOS 1">
-            <h2>Pulsera Rolex con Corona (DELAGADO)</h2>
-            <p>$239 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./PULSERAS/24.png" alt="ANILLOS 1">
-            <h2>Pulsera de Colores</h2>
-            <p>$139 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./PULSERAS/26.png" alt="ANILLOS 1">
-            <h2>Pulseras de Bolitas (oro laminado )</h2>
-            <p>$279 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./PULSERAS/27.png" alt="ANILLOS 1">
-            <h2>Pulsera Link</h2>
-            <p>$159 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./PULSERAS/31.png" alt="ANILLOS 1">
-            <h2>Pulseras Ajustables Tipo Tennis </h2>
-            <p>$139 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
-        <!-- Producto Nuevo -->
-        <div class="product new-product" data-product="3">
-            <img src="./PULSERAS/33.png" alt="ANILLOS 1">
-            <h2>Pulsera Baguette (blanca)</h2>
-            <p>$189 MXN</p>
-            <div class="new-label">Nuevo</div>
-        </div>
+        <div class="nombre-joyeria">BY AANGEEL</div>
+    </div>
 
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-item">Inicio</a>
+        <span class="breadcrumb-divider">/</span>
+        <span class="breadcrumb-item">Pulseras</span>
+    </div>
+
+    <!-- Sección de productos -->
+    <div class="productos-container">
+        <h2 class="titulo-seccion">Pulseras</h2>
+        <p class="descripcion-seccion">Dale ese toque especial a tu outfit con lo último en pulseras</p>
+        <div class="productos-grid">
+            <!-- Ejemplo de producto -->
+            <div class="producto-item">
+                <img src="./PULSERAS/trebol verde.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Trebol verde</h3>
+                    <p class="producto-precio">$149 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/hermes roja.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Hermes Rojo</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/hermes rosa.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Hermes Rosa</h3>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/rolex gruesa.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Rolex Grueso</h3>
+                    <p class="producto-precio">$249 c/u MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/rolex delgada.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Rolex Delgada</h3>
+                    <p class="producto-precio">$199 c/u MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/flor azul.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Flor Azul</h3>
+                    <p class="producto-precio">$99 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/flor negro.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Flor Negro</h3>
+                    <p class="producto-precio">$99 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/doble dorada.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Doble Dorada</h3>
+                    <p class="producto-precio">$189 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/iced tornasol.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Iced </h3>
+                    <p class="producto-descripcion">Disponible: Tornasol</p>
+                    <p class="producto-precio">$279 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/basic pavonada negro.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Basic </h3> 
+                    <p class="producto-descripcion">Disponible: Negro</p>
+                    <p class="producto-precio">$119 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/jade bolita.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Jade</h3>
+                    <p class="producto-precio">$165 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/doble negro mate.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Doble Negro Mate</h3>
+                    <p class="producto-precio">$189 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/rolex corona dorado grueso.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Rolex con Corona Grueso</h3>
+                    <p class="producto-precio">$289 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/rolex corona dorado delgada.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Rolex con Corona </h3>
+                    <p class="producto-precio">$239 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/colores blanco.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Colores</h3>
+                    <p class="producto-descripcion">Disponible: Blanco</p>
+                    <p class="producto-precio">$139 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/bolitas oro laminado.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera de Bolitas (oro laminado)</h3>
+                    <p class="producto-precio">$279 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/link.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Link</h3>
+                    <p class="producto-precio">$159 MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/tennis ajustables colores.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Tennis Ajustable</h3>
+                    <p class="producto-descripcion">Disponible: Negro, Rojo con blanco, Blanco con Negro, Rojo y Azul</p>
+                    <p class="producto-precio">$139 c/u MXN</p>
+                </div>
+            </div>
+            <div class="producto-item">
+                <img src="./PULSERAS/baguette blanco.png" alt="Pulsera " class="producto-imagen" loading="lazy">
+                <div class="producto-info">
+                    <h3 class="producto-nombre">Pulsera Baguette Blanco</h3>
+                    <p class="producto-precio">$189 MXN</p>
+                </div>
+            </div>
+            <!-- Repetir para otros productos -->
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <div class="contact-info" style="text-align: center;">
-            <img src="./INICIO/captura.png" alt="Contacto">
-            <p>ENVIANOS CAPTURA DEL PRODUCTO
-                A NUESTRO INSTAGRAM</p>
+        <div class="footer-content">
+            <div class="footer-section follow">
+                <h2>Síguenos</h2>
+                <p><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/by.aangeel/" target="_blank" style="color: #fff;">Instagram</a></p>
+                <p><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=100072445416755&mibextid=LQQJ4d" target="_blank" style="color: #fff;">Facebook</a></p>
+            </div>
         </div>
-        <div class="social-media" style="text-align: center;">
-            <img src="./INICIO/entreper.png" alt="Redes Sociales">
-            <p>ENTREGAS PERSONALES SEGURAS</p>
+        <div class="footer-bottom">
+            &copy; 2024 by.aangeel | Todos los derechos reservados
         </div>
-        
     </footer>
-
+    
 </body>
 </html>

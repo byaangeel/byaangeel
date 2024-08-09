@@ -204,3 +204,29 @@ body {
         width: calc(50% - 10px); /* Muestra dos productos por fila en dispositivos móviles */
     }
 }
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-item {
+    color: #333;
+    padding: 10px 15px;
+    margin: 0 5px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-item:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.pagination-item.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
